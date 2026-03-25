@@ -12,116 +12,134 @@
     --blue:#185FA5;--blue-pale:#E6F1FB;
     --red:#A32D2D;--red-pale:#FCEBEB;
     --teal:#0F6E56;--teal-pale:#E1F5EE;
-    --gray-bg:#F5F4F0;--gray-card:#FFFFFF;
-    --gray-border:rgba(0,0,0,0.1);--gray-text:#444441;
-    --gray-muted:#888780;--text-dark:#2C2C2A;
+    --gray-bg:#F5F4F0;--gray-card:#FFFFFF;--gray-border:rgba(0,0,0,0.1);
+    --gray-text:#444441;--gray-muted:#888780;--text-dark:#2C2C2A;
     --radius:10px;
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   body{font-family:'Barlow',sans-serif;background:var(--gray-bg);color:var(--text-dark);min-height:100vh;}
-  .header{background:var(--green);color:#fff;padding:16px 20px 12px;display:flex;align-items:center;justify-content:space-between;}
-  .header-title{font-family:'Barlow Condensed',sans-serif;font-size:21px;font-weight:700;letter-spacing:0.5px;line-height:1;}
-  .header-sub{font-size:11px;opacity:0.75;margin-top:3px;}
-  .header-right{text-align:right;}
-  .header-date{font-size:12px;opacity:0.85;font-weight:600;}
-  .header-save{font-size:10px;opacity:0.65;margin-top:2px;}
+  .header{background:var(--green);color:#fff;padding:18px 24px 14px;display:flex;align-items:center;justify-content:space-between;}
+  .header-title{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:700;letter-spacing:.5px;line-height:1;}
+  .header-sub{font-size:12px;opacity:.75;margin-top:3px;}
+  .header-date{font-size:12px;opacity:.75;text-align:right;}
   .nav{background:#fff;border-bottom:1px solid var(--gray-border);display:flex;overflow-x:auto;scrollbar-width:none;}
   .nav::-webkit-scrollbar{display:none;}
-  .nav-btn{flex-shrink:0;padding:11px 15px;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.4px;border:none;background:none;cursor:pointer;color:var(--gray-muted);border-bottom:3px solid transparent;transition:all 0.15s;}
+  .nav-btn{flex-shrink:0;padding:12px 18px;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:600;letter-spacing:.4px;border:none;background:none;cursor:pointer;color:var(--gray-muted);border-bottom:3px solid transparent;transition:all .15s;}
   .nav-btn:hover{color:var(--text-dark);}
   .nav-btn.active{color:var(--green);border-bottom-color:var(--green);}
-  .nav-btn .day-label{font-size:9px;display:block;font-weight:400;opacity:0.7;margin-top:1px;}
-  .page{display:none;padding:14px;max-width:860px;margin:0 auto;}
+  .nav-btn .day-label{font-size:10px;display:block;font-weight:400;opacity:.7;margin-top:1px;}
+  .page{display:none;padding:16px;max-width:860px;margin:0 auto;}
   .page.active{display:block;}
-  .section-title{font-family:'Barlow Condensed',sans-serif;font-size:19px;font-weight:700;letter-spacing:0.5px;margin-bottom:3px;}
-  .section-sub{font-size:12px;color:var(--gray-muted);margin-bottom:14px;}
-  .date-bar{background:#fff;border:1px solid var(--gray-border);border-radius:var(--radius);padding:10px 14px;margin-bottom:14px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;}
-  .date-bar-label{font-size:11px;color:var(--gray-muted);font-weight:600;text-transform:uppercase;letter-spacing:0.4px;}
-  .date-controls{display:flex;align-items:center;gap:7px;}
-  .date-nav-btn{width:28px;height:28px;border:1px solid var(--gray-border);border-radius:6px;background:#fff;cursor:pointer;font-size:13px;display:flex;align-items:center;justify-content:center;color:var(--gray-text);}
-  .date-nav-btn:hover{background:var(--gray-bg);}
-  .date-display{font-size:13px;font-weight:600;min-width:130px;text-align:center;}
-  .today-btn{padding:4px 10px;font-size:11px;font-weight:600;background:var(--green-pale);color:var(--green);border:1px solid var(--green-mid);border-radius:6px;cursor:pointer;font-family:'Barlow',sans-serif;}
-  .past-badge{display:inline-block;background:var(--amber-pale);border:1px solid #FAC775;border-radius:6px;padding:2px 7px;font-size:10px;color:var(--amber);font-weight:600;}
-  .warmup-banner{background:var(--amber-pale);border-left:3px solid var(--amber-light);border-radius:var(--radius);padding:10px 14px;margin-bottom:14px;font-size:13px;color:var(--amber);}
-  .warmup-banner strong{font-weight:600;display:block;margin-bottom:3px;font-size:13px;}
-  .exercise-card{background:var(--gray-card);border:1px solid var(--gray-border);border-radius:var(--radius);margin-bottom:10px;overflow:hidden;}
-  .exercise-header{display:flex;align-items:center;padding:11px 13px;cursor:pointer;gap:10px;user-select:none;}
-  .exercise-num{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;flex-shrink:0;}
-  .exercise-name{flex:1;font-weight:600;font-size:14px;}
-  .exercise-meta{font-size:11px;color:var(--gray-muted);margin-top:1px;font-weight:400;}
-  .exercise-badge{font-size:10px;font-weight:600;padding:2px 7px;border-radius:20px;flex-shrink:0;}
+  .section-title{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;letter-spacing:.5px;margin-bottom:4px;}
+  .section-sub{font-size:13px;color:var(--gray-muted);margin-bottom:16px;}
+  .warmup-banner{background:var(--amber-pale);border-left:3px solid var(--amber-light);border-radius:var(--radius);padding:10px 14px;margin-bottom:16px;font-size:13px;color:var(--amber);}
+  .warmup-banner strong{font-weight:600;display:block;margin-bottom:4px;}
+
+  /* EXERCISE CARD */
+  .exercise-card{background:var(--gray-card);border:1px solid var(--gray-border);border-radius:var(--radius);margin-bottom:12px;overflow:hidden;}
+  .exercise-header{display:flex;align-items:center;padding:12px 14px;cursor:pointer;gap:12px;user-select:none;}
+  .exercise-num{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;flex-shrink:0;}
+  .exercise-name{flex:1;font-weight:600;font-size:15px;}
+  .exercise-meta{font-size:12px;color:var(--gray-muted);margin-top:2px;}
+  .exercise-badge{font-size:11px;font-weight:600;padding:3px 8px;border-radius:20px;flex-shrink:0;}
   .badge-ares{background:var(--teal-pale);color:var(--teal);}
   .badge-rack{background:var(--blue-pale);color:var(--blue);}
   .badge-db{background:var(--amber-pale);color:var(--amber);}
   .badge-bw{background:#F1EFE8;color:#5F5E5A;}
-  .chevron{font-size:11px;color:var(--gray-muted);flex-shrink:0;transition:transform 0.2s;}
+  .chevron{font-size:12px;color:var(--gray-muted);flex-shrink:0;transition:transform .2s;}
   .exercise-card.open .chevron{transform:rotate(180deg);}
-  .exercise-body{display:none;border-top:1px solid var(--gray-border);padding:13px;}
+  .exercise-body{display:none;border-top:1px solid var(--gray-border);}
   .exercise-card.open .exercise-body{display:block;}
-  .instructions{font-size:13px;color:var(--gray-text);margin-bottom:10px;line-height:1.6;}
-  .tip-row{font-size:12px;color:var(--gray-muted);font-style:italic;margin-bottom:10px;}
-  .set-tracker-title{font-size:11px;font-weight:600;color:var(--gray-muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:7px;}
-  .sets-grid{display:grid;gap:5px;}
-  .set-row{display:flex;align-items:center;gap:7px;background:var(--gray-bg);border-radius:8px;padding:7px 9px;}
-  .set-check{width:20px;height:20px;border-radius:4px;border:1.5px solid var(--gray-border);cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:11px;transition:all 0.15s;background:#fff;}
+
+  /* TABS inside card */
+  .card-tabs{display:flex;border-bottom:1px solid var(--gray-border);}
+  .card-tab{flex:1;padding:9px 6px;font-size:12px;font-weight:600;text-align:center;cursor:pointer;color:var(--gray-muted);border-bottom:2px solid transparent;background:none;border-left:none;border-right:none;border-top:none;font-family:'Barlow',sans-serif;}
+  .card-tab.active{color:var(--green);border-bottom-color:var(--green);}
+  .card-panel{display:none;padding:14px;}
+  .card-panel.active{display:block;}
+
+  /* HOW TO STEPS */
+  .steps-list{list-style:none;margin:0;padding:0;}
+  .step-item{display:flex;gap:10px;margin-bottom:12px;align-items:flex-start;}
+  .step-circle{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0;color:#fff;background:var(--green);}
+  .step-text{font-size:13px;color:var(--gray-text);line-height:1.55;padding-top:4px;}
+  .step-text strong{color:var(--text-dark);font-weight:600;}
+
+  /* SETUP BOX */
+  .setup-box{background:var(--blue-pale);border-radius:8px;padding:10px 12px;margin-bottom:12px;font-size:13px;color:var(--blue);}
+  .setup-box-title{font-weight:600;margin-bottom:4px;font-size:13px;}
+
+  /* MUSCLES */
+  .muscles-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;}
+  .muscle-tag{font-size:11px;font-weight:600;padding:3px 10px;border-radius:20px;}
+  .muscle-primary{background:var(--green-pale);color:var(--green);}
+  .muscle-secondary{background:#F1EFE8;color:#5F5E5A;}
+
+  /* MISTAKES */
+  .mistakes-list{list-style:none;padding:0;margin:0;}
+  .mistake-item{display:flex;gap:8px;margin-bottom:8px;align-items:flex-start;font-size:13px;color:var(--gray-text);}
+  .mistake-x{width:18px;height:18px;border-radius:50%;background:var(--red-pale);color:var(--red);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;margin-top:1px;}
+  .fix-check{width:18px;height:18px;border-radius:50%;background:var(--green-pale);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;margin-top:1px;}
+
+  /* DEMO LINK */
+  .demo-btn{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;background:var(--gray-bg);border:1px solid var(--gray-border);border-radius:8px;font-size:13px;font-weight:600;color:var(--text-dark);text-decoration:none;cursor:pointer;margin-top:4px;}
+  .demo-btn:hover{background:var(--green-pale);border-color:var(--green-mid);}
+  .demo-icon{width:20px;height:20px;background:#FF0000;border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .demo-icon svg{fill:#fff;}
+  .exrx-btn{background:var(--blue-pale);border-color:#B5D4F4;color:var(--blue);margin-left:8px;}
+
+  /* SET TRACKER */
+  .set-tracker-title{font-size:12px;font-weight:600;color:var(--gray-muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;}
+  .sets-grid{display:grid;gap:6px;}
+  .set-row{display:flex;align-items:center;gap:8px;background:var(--gray-bg);border-radius:8px;padding:8px 10px;}
+  .set-check{width:20px;height:20px;border-radius:4px;border:1.5px solid var(--gray-border);cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:12px;transition:all .15s;background:#fff;}
   .set-check.done{background:var(--green-light);border-color:var(--green-light);color:#fff;}
-  .set-label{font-size:12px;font-weight:600;min-width:36px;}
-  .set-input{width:55px;padding:4px 5px;border:1px solid var(--gray-border);border-radius:6px;font-size:12px;text-align:center;background:#fff;color:var(--text-dark);font-family:'Barlow',sans-serif;}
-  .set-x{font-size:11px;color:var(--gray-muted);}
-  .set-reps{width:48px;padding:4px 5px;border:1px solid var(--gray-border);border-radius:6px;font-size:12px;text-align:center;background:#fff;color:var(--text-dark);font-family:'Barlow',sans-serif;}
-  .set-target{font-size:11px;color:var(--gray-muted);flex:1;text-align:right;}
-  .progress-row{display:flex;align-items:center;gap:8px;margin-top:8px;}
+  .set-label{font-size:13px;font-weight:600;min-width:42px;}
+  .set-input{width:58px;padding:4px 6px;border:1px solid var(--gray-border);border-radius:6px;font-size:13px;text-align:center;background:#fff;color:var(--text-dark);font-family:'Barlow',sans-serif;}
+  .set-x{font-size:12px;color:var(--gray-muted);}
+  .set-reps{width:52px;padding:4px 6px;border:1px solid var(--gray-border);border-radius:6px;font-size:13px;text-align:center;background:#fff;color:var(--text-dark);font-family:'Barlow',sans-serif;}
+  .set-target{font-size:12px;color:var(--gray-muted);flex:1;text-align:right;}
+  .progress-row{display:flex;align-items:center;gap:8px;margin-top:10px;}
   .progress-bar-bg{flex:1;height:5px;background:#E8E6E0;border-radius:3px;overflow:hidden;}
-  .progress-bar-fill{height:100%;background:var(--green-light);border-radius:3px;transition:width 0.3s;}
-  .progress-pct{font-size:11px;color:var(--gray-muted);min-width:26px;text-align:right;}
-  .day-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:14px;}
-  .summary-card{background:#fff;border:1px solid var(--gray-border);border-radius:var(--radius);padding:11px 13px;text-align:center;}
-  .summary-val{font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:700;line-height:1;}
-  .summary-lbl{font-size:10px;color:var(--gray-muted);margin-top:3px;}
-  .history-month-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
-  .month-title{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;}
-  .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:4px;}
-  .cal-header{font-size:10px;font-weight:600;color:var(--gray-muted);text-align:center;padding:4px 0;text-transform:uppercase;}
-  .cal-day{min-height:44px;background:#fff;border:1px solid var(--gray-border);border-radius:8px;padding:4px 3px;cursor:default;position:relative;}
-  .cal-day.has-workout{cursor:pointer;border-color:var(--green-mid);}
-  .cal-day.has-workout:hover{background:var(--green-pale);}
-  .cal-day.today{border-color:var(--green);border-width:2px;}
-  .cal-day.empty{background:transparent;border-color:transparent;}
-  .cal-day-num{font-size:11px;font-weight:600;color:var(--gray-muted);text-align:center;}
-  .cal-day.has-workout .cal-day-num{color:var(--text-dark);}
-  .cal-day.today .cal-day-num{color:var(--green);}
-  .cal-workout-dot{font-size:8px;font-weight:700;padding:1px 3px;border-radius:3px;margin-top:2px;display:block;text-align:center;line-height:1.4;}
-  .history-entry{background:#fff;border:1px solid var(--gray-border);border-radius:var(--radius);padding:13px;margin-bottom:10px;}
-  .history-entry-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;flex-wrap:wrap;gap:6px;}
-  .history-date-label{font-weight:600;font-size:14px;}
-  .history-day-badge{font-size:11px;font-weight:600;padding:3px 9px;border-radius:20px;}
-  .history-sets{display:grid;gap:4px;}
-  .history-set-row{display:flex;align-items:center;gap:8px;font-size:12px;padding:5px 8px;background:var(--gray-bg);border-radius:6px;}
-  .history-set-done{width:16px;height:16px;border-radius:3px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:10px;}
-  .week-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin-bottom:14px;}
-  .week-day{background:#fff;border:1px solid var(--gray-border);border-radius:8px;padding:7px 5px;text-align:center;}
-  .week-day-name{font-size:9px;color:var(--gray-muted);font-weight:600;text-transform:uppercase;}
-  .week-day-tag{font-size:9px;font-weight:600;margin-top:3px;padding:2px 3px;border-radius:4px;line-height:1.3;}
+  .progress-bar-fill{height:100%;background:var(--green-light);border-radius:3px;transition:width .3s;}
+  .progress-pct{font-size:12px;color:var(--gray-muted);min-width:28px;text-align:right;}
+
+  .day-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px;}
+  .summary-card{background:#fff;border:1px solid var(--gray-border);border-radius:var(--radius);padding:12px 14px;text-align:center;}
+  .summary-val{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:700;line-height:1;}
+  .summary-lbl{font-size:11px;color:var(--gray-muted);margin-top:3px;}
+
+  .week-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-bottom:18px;}
+  .week-day{background:#fff;border:1px solid var(--gray-border);border-radius:8px;padding:8px 6px;text-align:center;}
+  .week-day-name{font-size:10px;color:var(--gray-muted);font-weight:600;text-transform:uppercase;}
+  .week-day-tag{font-size:9px;font-weight:600;margin-top:4px;padding:2px 4px;border-radius:4px;line-height:1.3;}
   .week-day.rest .week-day-tag{background:#F1EFE8;color:#888780;}
   .week-day.push .week-day-tag{background:var(--blue-pale);color:var(--blue);}
   .week-day.legs .week-day-tag{background:var(--red-pale);color:var(--red);}
   .week-day.pull .week-day-tag{background:var(--teal-pale);color:var(--teal);}
   .week-day.full .week-day-tag{background:var(--green-pale);color:var(--green);}
   .week-day.bike .week-day-tag{background:var(--amber-pale);color:var(--amber);}
-  .lift-row{background:#fff;border:1px solid var(--gray-border);border-radius:var(--radius);padding:11px 13px;display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;flex-wrap:wrap;gap:8px;}
-  .lift-name{font-weight:600;font-size:13px;}
-  .lift-details{font-size:11px;color:var(--gray-muted);}
+
+  .golf-card{background:var(--gray-card);border:1px solid var(--gray-border);border-radius:var(--radius);padding:14px;margin-bottom:12px;}
+  .golf-card-title{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:700;margin-bottom:8px;}
+  .lift-row{background:#fff;border:1px solid var(--gray-border);border-radius:var(--radius);padding:12px 14px;display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;flex-wrap:wrap;gap:8px;}
+  .lift-name{font-weight:600;font-size:14px;}
+  .lift-details{font-size:12px;color:var(--gray-muted);}
   .lift-controls{display:flex;align-items:center;gap:6px;}
-  .lift-weight-input{width:66px;padding:5px 7px;border:1px solid var(--gray-border);border-radius:6px;font-size:12px;text-align:center;font-family:'Barlow',sans-serif;background:var(--gray-bg);}
-  .save-btn{padding:5px 11px;background:var(--green);color:#fff;border:none;border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;font-family:'Barlow',sans-serif;}
+  .lift-weight-input{width:70px;padding:5px 8px;border:1px solid var(--gray-border);border-radius:6px;font-size:13px;text-align:center;font-family:'Barlow',sans-serif;background:var(--gray-bg);}
+  .save-btn{padding:5px 12px;background:var(--green);color:#fff;border:none;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Barlow',sans-serif;}
   .save-btn:hover{background:var(--green-light);}
-  .golf-card{background:var(--gray-card);border:1px solid var(--gray-border);border-radius:var(--radius);padding:13px;margin-bottom:10px;}
-  .golf-card-title{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:700;margin-bottom:7px;}
-  .back-card{background:var(--red-pale);border-left:3px solid #E24B4A;border-radius:var(--radius);padding:11px 13px;margin-bottom:14px;}
-  .back-card-title{font-weight:600;font-size:13px;color:var(--red);margin-bottom:6px;}
-  .footer-note{text-align:center;font-size:11px;color:var(--gray-muted);padding:18px 16px;border-top:1px solid var(--gray-border);margin-top:8px;}
-  @media(max-width:480px){.week-grid{grid-template-columns:repeat(4,1fr);}.cal-grid{gap:3px;}.exercise-name{font-size:13px;}}
+  .reset-btn{padding:6px 14px;background:transparent;color:var(--red);border:1px solid var(--red);border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Barlow',sans-serif;}
+  .reset-btn:hover{background:var(--red-pale);}
+  .save-indicator{font-size:11px;color:var(--teal);display:none;margin-left:8px;font-weight:600;}
+  .save-indicator.show{display:inline;}
+  .back-card{background:var(--red-pale);border-left:3px solid #E24B4A;border-radius:var(--radius);padding:12px 14px;margin-bottom:16px;}
+  .back-card-title{font-weight:600;font-size:14px;color:var(--red);margin-bottom:8px;}
+  .history-row{background:#fff;border:1px solid var(--gray-border);border-radius:8px;padding:12px 14px;margin-bottom:10px;font-size:13px;}
+  .history-date{font-weight:600;color:var(--green);margin-bottom:6px;font-size:13px;}
+  .history-exercise{color:var(--gray-text);margin-bottom:6px;}
+  .footer-note{text-align:center;font-size:11px;color:var(--gray-muted);padding:20px 16px;border-top:1px solid var(--gray-border);margin-top:8px;}
+  @media(max-width:480px){.week-grid{grid-template-columns:repeat(4,1fr);},.exercise-name{font-size:14px;}}
 </style>
 </head>
 <body>
@@ -131,112 +149,123 @@
     <div class="header-title">REP PR-5000 + ARES 2.0</div>
     <div class="header-sub">Personal Training Dashboard</div>
   </div>
-  <div class="header-right">
-    <div class="header-date" id="today-date"></div>
-    <div class="header-save" id="save-indicator">All changes saved automatically</div>
-  </div>
+  <div class="header-date" id="today-date"></div>
 </div>
 
 <div class="nav">
   <button class="nav-btn active" onclick="showPage('schedule')">SCHEDULE<span class="day-label">Weekly</span></button>
-  <button class="nav-btn" onclick="showPage('day1')">DAY 1<span class="day-label">Push</span></button>
+  <button class="nav-btn" onclick="showPage('day1')">DAY 1<span class="day-label">Upper Push</span></button>
   <button class="nav-btn" onclick="showPage('day2')">DAY 2<span class="day-label">Legs</span></button>
-  <button class="nav-btn" onclick="showPage('day3')">DAY 3<span class="day-label">Pull</span></button>
+  <button class="nav-btn" onclick="showPage('day3')">DAY 3<span class="day-label">Upper Pull</span></button>
   <button class="nav-btn" onclick="showPage('day4')">DAY 4<span class="day-label">Full Body</span></button>
   <button class="nav-btn" onclick="showPage('golf')">GOLF<span class="day-label">Performance</span></button>
   <button class="nav-btn" onclick="showPage('progress')">PROGRESS<span class="day-label">Tracking</span></button>
-  <button class="nav-btn" onclick="showPage('history')">HISTORY<span class="day-label">Calendar</span></button>
+  <button class="nav-btn" onclick="showPage('history')">HISTORY<span class="day-label">Log</span></button>
 </div>
 
 <!-- SCHEDULE -->
 <div class="page active" id="page-schedule">
-  <div class="section-title">Weekly Schedule</div>
-  <div class="section-sub">Recommended layout — adjust to fit your week</div>
-  <div class="week-grid">
-    <div class="week-day push"><div class="week-day-name">Mon</div><div class="week-day-tag">PUSH</div></div>
-    <div class="week-day legs"><div class="week-day-name">Tue</div><div class="week-day-tag">LEGS</div></div>
-    <div class="week-day bike"><div class="week-day-name">Wed</div><div class="week-day-tag">BIKE</div></div>
-    <div class="week-day pull"><div class="week-day-name">Thu</div><div class="week-day-tag">PULL</div></div>
-    <div class="week-day rest"><div class="week-day-name">Fri</div><div class="week-day-tag">REST</div></div>
-    <div class="week-day full"><div class="week-day-name">Sat</div><div class="week-day-tag">FULL</div></div>
-    <div class="week-day bike"><div class="week-day-name">Sun</div><div class="week-day-tag">BIKE</div></div>
-  </div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;">
-    <div class="summary-card" style="text-align:left;"><div style="font-weight:600;font-size:13px;margin-bottom:6px;color:var(--green);">Cardio</div><div style="font-size:12px;color:var(--gray-text);line-height:1.7;">Stationary bike<br>10–12 miles/session<br>5× per week</div></div>
-    <div class="summary-card" style="text-align:left;"><div style="font-weight:600;font-size:13px;margin-bottom:6px;color:var(--blue);">Your Goals</div><div style="font-size:12px;color:var(--gray-text);line-height:1.7;">Fat loss + muscle<br>Golf performance<br>Long-term health</div></div>
-  </div>
-  <div style="background:var(--teal-pale);border-left:3px solid var(--teal);border-radius:var(--radius);padding:10px 13px;font-size:12px;color:var(--teal);margin-bottom:14px;">
-    <strong style="display:block;font-weight:600;font-size:12px;margin-bottom:3px;">Deload every 6–8 weeks</strong>
-    Use 70% of your normal weight for one full week to recover and grow stronger.
-  </div>
-  <div class="section-title" style="font-size:16px;margin-bottom:3px;">Daily Nutrition Targets</div>
-  <div class="section-sub">Fat loss + muscle gain at 61</div>
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:14px;">
-    <div class="summary-card"><div class="summary-val" style="color:var(--green);">130g</div><div class="summary-lbl">Protein</div></div>
-    <div class="summary-card"><div class="summary-val" style="color:var(--amber);">~350</div><div class="summary-lbl">Cal deficit</div></div>
-    <div class="summary-card"><div class="summary-val" style="color:var(--blue);">90oz</div><div class="summary-lbl">Water</div></div>
-  </div>
-  <div class="section-title" style="font-size:16px;margin-bottom:3px;">3-Month Targets</div>
-  <div class="section-sub">Based on age 61, 5'6", 170 lbs</div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:9px;">
-    <div class="summary-card" style="text-align:left;"><div style="font-size:10px;color:var(--gray-muted);margin-bottom:4px;">BODY WEIGHT</div><div style="font-weight:600;font-size:14px;">165–168 lbs</div><div style="font-size:11px;color:var(--gray-muted);">Waist: 30–31"</div></div>
-    <div class="summary-card" style="text-align:left;"><div style="font-size:10px;color:var(--gray-muted);margin-bottom:4px;">DEADLIFT GOAL</div><div style="font-weight:600;font-size:14px;">155–175 lbs</div><div style="font-size:11px;color:var(--gray-muted);">From 100 lbs start</div></div>
+  <div style="padding-top:4px;">
+    <div class="section-title">Weekly Schedule</div>
+    <div class="section-sub">Option A layout — adjust to fit your week</div>
+    <div class="week-grid">
+      <div class="week-day push"><div class="week-day-name">Mon</div><div class="week-day-tag">PUSH</div></div>
+      <div class="week-day legs"><div class="week-day-name">Tue</div><div class="week-day-tag">LEGS</div></div>
+      <div class="week-day bike"><div class="week-day-name">Wed</div><div class="week-day-tag">BIKE</div></div>
+      <div class="week-day pull"><div class="week-day-name">Thu</div><div class="week-day-tag">PULL</div></div>
+      <div class="week-day rest"><div class="week-day-name">Fri</div><div class="week-day-tag">REST</div></div>
+      <div class="week-day full"><div class="week-day-name">Sat</div><div class="week-day-tag">FULL</div></div>
+      <div class="week-day bike"><div class="week-day-name">Sun</div><div class="week-day-tag">BIKE</div></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;">
+      <div class="summary-card" style="text-align:left;"><div style="font-weight:600;font-size:14px;margin-bottom:8px;color:var(--green);">Cardio</div><div style="font-size:13px;color:var(--gray-text);line-height:1.7;">Stationary bike<br>10–12 miles/session<br>5× per week</div></div>
+      <div class="summary-card" style="text-align:left;"><div style="font-weight:600;font-size:14px;margin-bottom:8px;color:var(--blue);">Your Goals</div><div style="font-size:13px;color:var(--gray-text);line-height:1.7;">Fat loss + muscle<br>Golf performance<br>Long-term health</div></div>
+    </div>
+    <div style="background:var(--teal-pale);border-left:3px solid var(--teal);border-radius:var(--radius);padding:10px 14px;font-size:13px;color:var(--teal);margin-bottom:16px;">
+      <strong style="display:block;font-weight:600;margin-bottom:3px;">Deload every 6–8 weeks</strong>Use 70% of your normal weight for one full week to recover and grow stronger.
+    </div>
+    <div class="section-title" style="font-size:17px;margin-bottom:4px;">Daily Nutrition Targets</div>
+    <div class="section-sub">Fat loss + muscle gain at 61</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px;">
+      <div class="summary-card"><div class="summary-val" style="color:var(--green);">130g</div><div class="summary-lbl">Protein</div></div>
+      <div class="summary-card"><div class="summary-val" style="color:var(--amber);">~350</div><div class="summary-lbl">Cal deficit</div></div>
+      <div class="summary-card"><div class="summary-val" style="color:var(--blue);">90oz</div><div class="summary-lbl">Water</div></div>
+    </div>
+    <div class="section-title" style="font-size:17px;margin-bottom:4px;">Realistic 3-Month Targets</div>
+    <div class="section-sub">Based on age 61, 5'6", 170 lbs</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+      <div class="summary-card" style="text-align:left;"><div style="font-size:12px;color:var(--gray-muted);margin-bottom:6px;">BODY WEIGHT</div><div style="font-weight:600;font-size:15px;">165–168 lbs</div><div style="font-size:12px;color:var(--gray-muted);">Waist: 30–31"</div></div>
+      <div class="summary-card" style="text-align:left;"><div style="font-size:12px;color:var(--gray-muted);margin-bottom:6px;">DEADLIFT GOAL</div><div style="font-weight:600;font-size:15px;">155–175 lbs</div><div style="font-size:12px;color:var(--gray-muted);">From 100 lbs start</div></div>
+    </div>
   </div>
 </div>
 
-<!-- DAY 1 -->
+<!-- DAY PAGES -->
 <div class="page" id="page-day1">
   <div class="section-title">Day 1 — Upper Push</div>
   <div class="section-sub">Chest · Shoulders · Triceps · ~55 min</div>
-  <div id="dateBar-day1"></div>
   <div class="day-summary">
-    <div class="summary-card"><div class="summary-val" id="d1-total">0</div><div class="summary-lbl">Total sets</div></div>
+    <div class="summary-card"><div class="summary-val">21</div><div class="summary-lbl">Total sets</div></div>
     <div class="summary-card"><div class="summary-val" id="d1-done">0</div><div class="summary-lbl">Sets done</div></div>
     <div class="summary-card"><div class="summary-val">55</div><div class="summary-lbl">Min target</div></div>
+  </div>
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap;">
+    <button class="save-btn" onclick="saveDay('d1','Upper Push')" style="font-size:13px;">Save Workout</button>
+    <button class="reset-btn" onclick="resetDay('d1')">Reset Day</button>
+    <span class="save-indicator" id="d1-saved">Saved!</span>
   </div>
   <div class="warmup-banner"><strong>Warmup (5 min)</strong>Arm circles 30 sec · Band pull-aparts 15 reps · 1–2 light bench sets at 50%</div>
   <div id="day1-exercises"></div>
 </div>
 
-<!-- DAY 2 -->
 <div class="page" id="page-day2">
   <div class="section-title">Day 2 — Lower Body</div>
   <div class="section-sub">Legs · Glutes · Hamstrings · ~55–60 min</div>
-  <div id="dateBar-day2"></div>
   <div class="day-summary">
-    <div class="summary-card"><div class="summary-val" id="d2-total">0</div><div class="summary-lbl">Total sets</div></div>
+    <div class="summary-card"><div class="summary-val">20</div><div class="summary-lbl">Total sets</div></div>
     <div class="summary-card"><div class="summary-val" id="d2-done">0</div><div class="summary-lbl">Sets done</div></div>
     <div class="summary-card"><div class="summary-val">60</div><div class="summary-lbl">Min target</div></div>
   </div>
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap;">
+    <button class="save-btn" onclick="saveDay('d2','Lower Body')" style="font-size:13px;">Save Workout</button>
+    <button class="reset-btn" onclick="resetDay('d2')">Reset Day</button>
+    <span class="save-indicator" id="d2-saved">Saved!</span>
+  </div>
   <div class="warmup-banner" style="background:var(--red-pale);border-left-color:#E24B4A;"><strong style="color:var(--red);">Back Protection — Do First (5 min)</strong>Bird Dog 2×8 each side · Dead Bug 2×10 · Pallof Press 2×10 each side</div>
-  <div class="back-card"><div class="back-card-title">Back Safety</div><div style="font-size:12px;color:var(--gray-text);">Keep flat back on squats and RDLs. If lower back tightens, stop and rest. Back health before weight.</div></div>
+  <div class="back-card"><div class="back-card-title">Back Safety</div><div style="font-size:13px;color:var(--gray-text);">Keep a flat back on squats and RDLs. If lower back tightens, stop and rest.</div></div>
   <div id="day2-exercises"></div>
 </div>
 
-<!-- DAY 3 -->
 <div class="page" id="page-day3">
   <div class="section-title">Day 3 — Upper Pull</div>
   <div class="section-sub">Back · Biceps · Posture · ~50–55 min</div>
-  <div id="dateBar-day3"></div>
   <div class="day-summary">
-    <div class="summary-card"><div class="summary-val" id="d3-total">0</div><div class="summary-lbl">Total sets</div></div>
+    <div class="summary-card"><div class="summary-val">18</div><div class="summary-lbl">Total sets</div></div>
     <div class="summary-card"><div class="summary-val" id="d3-done">0</div><div class="summary-lbl">Sets done</div></div>
     <div class="summary-card"><div class="summary-val">55</div><div class="summary-lbl">Min target</div></div>
   </div>
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap;">
+    <button class="save-btn" onclick="saveDay('d3','Upper Pull')" style="font-size:13px;">Save Workout</button>
+    <button class="reset-btn" onclick="resetDay('d3')">Reset Day</button>
+    <span class="save-indicator" id="d3-saved">Saved!</span>
+  </div>
   <div class="warmup-banner"><strong>Warmup (5 min)</strong>Band pull-aparts 15 reps · Shoulder circles · Light lat pulldown 1 set</div>
-  <div class="golf-card" style="background:var(--green-pale);border:1px solid var(--green-mid);margin-bottom:12px;"><div class="golf-card-title" style="color:var(--green);">Golf Power Note</div><div style="font-size:12px;color:var(--gray-text);">Face pulls are critical — they prevent shoulder injuries and improve swing rotation. Never skip them.</div></div>
+  <div class="golf-card" style="background:var(--green-pale);border:1px solid var(--green-mid);margin-bottom:12px;"><div class="golf-card-title" style="color:var(--green);">Golf Power Note</div><div style="font-size:13px;color:var(--gray-text);">Pull day builds muscles that control your downswing. Face pulls are critical — they prevent shoulder injuries and improve swing rotation.</div></div>
   <div id="day3-exercises"></div>
 </div>
 
-<!-- DAY 4 -->
 <div class="page" id="page-day4">
   <div class="section-title">Day 4 — Full Body + Core</div>
   <div class="section-sub">Strength · Stability · Golf Power · ~50 min</div>
-  <div id="dateBar-day4"></div>
   <div class="day-summary">
-    <div class="summary-card"><div class="summary-val" id="d4-total">0</div><div class="summary-lbl">Total sets</div></div>
+    <div class="summary-card"><div class="summary-val">19</div><div class="summary-lbl">Total sets</div></div>
     <div class="summary-card"><div class="summary-val" id="d4-done">0</div><div class="summary-lbl">Sets done</div></div>
     <div class="summary-card"><div class="summary-val">50</div><div class="summary-lbl">Min target</div></div>
+  </div>
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap;">
+    <button class="save-btn" onclick="saveDay('d4','Full Body')" style="font-size:13px;">Save Workout</button>
+    <button class="reset-btn" onclick="resetDay('d4')">Reset Day</button>
+    <span class="save-indicator" id="d4-saved">Saved!</span>
   </div>
   <div class="warmup-banner" style="background:var(--red-pale);border-left-color:#E24B4A;"><strong style="color:var(--red);">Back Protection — Do First (5 min)</strong>Bird Dog 2×8 · Dead Bug 2×10 · Hip hinge warm-up with empty bar</div>
   <div id="day4-exercises"></div>
@@ -245,277 +274,550 @@
 <!-- GOLF -->
 <div class="page" id="page-golf">
   <div class="section-title">Golf Performance</div>
-  <div class="section-sub">Mobility and drills for a stronger, consistent swing</div>
+  <div class="section-sub">Drills and mobility for a stronger swing</div>
   <div class="golf-card" style="background:var(--green-pale);border:1px solid var(--green-mid);">
     <div class="golf-card-title" style="color:var(--green);">Golf Mobility Circuit</div>
-    <div style="font-size:11px;color:var(--gray-muted);margin-bottom:10px;">Do 2–3× per week after your workout. Takes 5–8 minutes.</div>
+    <div style="font-size:12px;color:var(--gray-muted);margin-bottom:10px;">Do 2–3× per week after your workout. Takes 5–8 minutes.</div>
     <div id="golf-circuit"></div>
   </div>
-  <div class="section-title" style="font-size:16px;margin:14px 0 3px;">Key Lifts for Golf Power</div>
-  <div class="section-sub">These exercises directly transfer to your game</div>
-  <div class="golf-card"><div class="golf-card-title">Cable Woodchoppers</div><div style="font-size:12px;color:var(--gray-text);line-height:1.6;margin-bottom:6px;"><strong>Why:</strong> Directly mimics rotational power of a golf swing.<br><strong>How:</strong> Ares cable at high position. Stand sideways. Pull diagonally from high to low. Rotate through core.<br><strong>Sets/Reps:</strong> 3 × 12–15 each side</div><div class="tip-row">Explosive pull, controlled return</div></div>
-  <div class="golf-card"><div class="golf-card-title">Face Pulls</div><div style="font-size:12px;color:var(--gray-text);line-height:1.6;margin-bottom:6px;"><strong>Why:</strong> Builds rotator cuff — prevents most common golf injury.<br><strong>How:</strong> Ares at forehead height. Pull rope to face, elbows wide and high.<br><strong>Sets/Reps:</strong> 3 × 12–15 — do on every upper body day</div></div>
-  <div class="golf-card"><div class="golf-card-title">Romanian Deadlift</div><div style="font-size:12px;color:var(--gray-text);line-height:1.6;"><strong>Why:</strong> Hip hinge strength = power at impact.<br><strong>Sets/Reps:</strong> 3 × 8–10</div></div>
-  <div style="background:var(--amber-pale);border-left:3px solid var(--amber-light);border-radius:var(--radius);padding:11px 13px;font-size:12px;margin-top:14px;"><strong style="display:block;font-weight:600;margin-bottom:3px;color:var(--amber);">Driver Distance Goal</strong><span style="color:var(--gray-text);">With 3–4 months of this program + golf mobility work, expect 10–20 yards added through better hip rotation and shoulder stability.</span></div>
+  <div class="golf-card"><div class="golf-card-title">Cable Woodchoppers — Golf Swing Power</div><div style="font-size:13px;color:var(--gray-text);line-height:1.6;"><strong>Why it matters:</strong> Directly mimics golf swing rotation.<br><strong>How:</strong> Ares cable at high position. Stand sideways. Pull handle diagonally from high to low. Rotate through core, hips stable.<br><strong>Sets/Reps:</strong> 3 × 12–15 each side</div></div>
+  <div class="golf-card"><div class="golf-card-title">Face Pulls — Shoulder Protection</div><div style="font-size:13px;color:var(--gray-text);line-height:1.6;"><strong>Why it matters:</strong> Builds rotator cuff — prevents the most common golf injury.<br><strong>How:</strong> Ares at forehead height. Pull rope to face, flare elbows wide. Squeeze shoulder blades.<br><strong>Sets/Reps:</strong> 3 × 12–15</div></div>
+  <div style="background:var(--amber-pale);border-left:3px solid var(--amber-light);border-radius:var(--radius);padding:12px 14px;font-size:13px;margin-top:4px;"><strong style="display:block;font-weight:600;margin-bottom:4px;color:var(--amber);">Driver Distance Goal</strong><span style="color:var(--gray-text);">With 3–4 months of this program + golf mobility work, expect 10–20 yards added through better hip rotation and shoulder stability.</span></div>
 </div>
 
 <!-- PROGRESS -->
 <div class="page" id="page-progress">
   <div class="section-title">Progress Tracker</div>
-  <div class="section-sub">Log your weights — see how far you've come</div>
-  <div style="background:var(--teal-pale);border-left:3px solid var(--teal);border-radius:var(--radius);padding:10px 13px;font-size:12px;color:var(--teal);margin-bottom:14px;"><strong style="display:block;font-weight:600;margin-bottom:3px;">Double Progression Rule</strong>Hit top reps on all sets → add 5–10 lbs next session.</div>
-  <div class="section-title" style="font-size:15px;margin-bottom:9px;">Main Lifts — Current Weight</div>
+  <div class="section-sub">Auto-saved as you type</div>
+  <div style="background:var(--teal-pale);border-left:3px solid var(--teal);border-radius:var(--radius);padding:10px 14px;font-size:13px;color:var(--teal);margin-bottom:16px;">
+    <strong style="display:block;font-weight:600;margin-bottom:3px;">Double Progression Rule</strong>When you hit the top rep range for all sets → add 5–10 lbs next session.
+  </div>
+  <div class="section-title" style="font-size:16px;margin-bottom:10px;">Main Lifts — Current Working Weight</div>
   <div id="progress-lifts"></div>
-  <div class="section-title" style="font-size:15px;margin:14px 0 7px;">Deadlift 12-Week Plan</div>
+  <div class="section-title" style="font-size:16px;margin:16px 0 8px;">Deadlift 12-Week Plan</div>
   <div style="background:#fff;border:1px solid var(--gray-border);border-radius:var(--radius);overflow:hidden;">
-    <table style="width:100%;border-collapse:collapse;font-size:12px;">
-      <thead><tr style="background:var(--green-pale);"><th style="padding:8px 11px;text-align:left;font-weight:600;color:var(--green);font-size:11px;">Week</th><th style="padding:8px 11px;text-align:left;font-weight:600;color:var(--green);font-size:11px;">Weight</th><th style="padding:8px 11px;text-align:left;font-weight:600;color:var(--green);font-size:11px;">Sets × Reps</th></tr></thead>
+    <table style="width:100%;border-collapse:collapse;font-size:13px;">
+      <thead><tr style="background:var(--green-pale);"><th style="padding:9px 12px;text-align:left;font-weight:600;color:var(--green);font-size:12px;">Week</th><th style="padding:9px 12px;text-align:left;font-weight:600;color:var(--green);font-size:12px;">Weight</th><th style="padding:9px 12px;text-align:left;font-weight:600;color:var(--green);font-size:12px;">Sets × Reps</th></tr></thead>
       <tbody id="deadlift-table"></tbody>
     </table>
   </div>
-  <div class="section-title" style="font-size:15px;margin:14px 0 7px;">Body Stats</div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:9px;">
-    <div class="summary-card" style="text-align:left;"><div style="font-size:10px;color:var(--gray-muted);margin-bottom:5px;">CURRENT WEIGHT</div><div style="display:flex;align-items:center;gap:7px;"><input type="number" id="body-weight" class="lift-weight-input" placeholder="170"><span style="font-size:12px;color:var(--gray-muted);">lbs</span><button class="save-btn" onclick="saveBodyWeight()">Save</button></div></div>
-    <div class="summary-card" style="text-align:left;"><div style="font-size:10px;color:var(--gray-muted);margin-bottom:5px;">TARGET WEIGHT</div><div style="font-weight:600;font-size:17px;color:var(--green);">165–168 lbs</div></div>
+  <div class="section-title" style="font-size:16px;margin:16px 0 8px;">Body Stats</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;">
+    <div class="summary-card" style="text-align:left;"><div style="font-size:11px;color:var(--gray-muted);margin-bottom:6px;">CURRENT WEIGHT (lbs)</div><input type="number" id="body-weight" class="lift-weight-input" placeholder="170" style="width:80px;" oninput="lsSet('body_weight',this.value)"></div>
+    <div class="summary-card" style="text-align:left;"><div style="font-size:11px;color:var(--gray-muted);margin-bottom:6px;">TARGET WEIGHT</div><div style="font-weight:600;font-size:18px;color:var(--green);">165–168 lbs</div></div>
   </div>
 </div>
 
 <!-- HISTORY -->
 <div class="page" id="page-history">
   <div class="section-title">Workout History</div>
-  <div class="section-sub">Tap any highlighted day to review exactly what you lifted</div>
-  <div class="history-month-nav">
-    <button class="date-nav-btn" onclick="changeHistoryMonth(-1)">&#9664;</button>
-    <div class="month-title" id="history-month-title"></div>
-    <button class="date-nav-btn" onclick="changeHistoryMonth(1)">&#9654;</button>
+  <div class="section-sub">Every saved workout logged here</div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+    <div style="font-size:13px;color:var(--gray-muted);" id="history-count">No workouts saved yet</div>
+    <button class="reset-btn" onclick="clearHistory()" style="margin-bottom:0;">Clear All History</button>
   </div>
-  <div class="cal-grid" id="cal-headers"></div>
-  <div class="cal-grid" id="cal-grid" style="margin-bottom:16px;"></div>
-  <div id="history-detail"></div>
+  <div id="history-list"></div>
 </div>
 
-<div class="footer-note">REP PR-5000 + Ares 2.0 &nbsp;·&nbsp; All data saves automatically in your browser &nbsp;·&nbsp; Use History tab to go back in time</div>
+<div class="footer-note">REP PR-5000 + Ares 2.0 · All progress auto-saved · Age-smart program for golf, strength & fat loss</div>
 
 <script>
-var DAY_DATA={
-  day1:[
-    {name:"Barbell Bench Press",badge:"rack",sets:4,repRange:"5-8",rest:"2 min",notes:"Lie flat. Bar to mid-chest. Elbows at 45 degrees. Press up until arms extend.",tips:"Feet flat on floor. No bouncing off chest. Control the lowering."},
-    {name:"Incline Dumbbell Press",badge:"db",sets:3,repRange:"8-10",rest:"90 sec",notes:"Bench at 30-35 degrees. Press up until arms extend. Lower slowly.",tips:"Focus upper chest. Control the lowering phase."},
-    {name:"Cable Chest Fly (Ares)",badge:"ares",sets:3,repRange:"12-15",rest:"75 sec",notes:"Pulleys at chest height. Split stance. Arms slightly bent. Bring handles together in front of chest.",tips:"Squeeze chest at front. Slow return is key."},
-    {name:"Standing Overhead Press",badge:"rack",sets:3,repRange:"6-8",rest:"2 min",notes:"Bar at shoulder level. Brace core tightly. Press overhead. Lock arms fully.",tips:"Tight core. Straight bar path. Use moderate weight."},
-    {name:"Cable Lateral Raise (Ares)",badge:"ares",sets:3,repRange:"12-15",rest:"60 sec",notes:"Pulley at lowest position. Outside hand grabs handle. Raise arm to shoulder height. Lower slowly.",tips:"Light weight. Controlled movement. Don't shrug."},
-    {name:"Cable Triceps Pushdown (Ares)",badge:"ares",sets:3,repRange:"10-15",rest:"60 sec",notes:"Rope attachment. Elbows tucked at sides. Push down and extend fully. Return slowly.",tips:"Only elbows move. Full extension at bottom."}
-  ],
-  day2:[
-    {name:"Back Squat",badge:"rack",sets:4,repRange:"5-8",rest:"2 min",notes:"Bar across upper back. Feet shoulder-width. Sit back and down to at least parallel.",tips:"Chest up, knees track over toes, neutral spine. Drive through heels."},
-    {name:"Romanian Deadlift",badge:"db",sets:3,repRange:"8-10",rest:"90 sec",notes:"Hold bar or dumbbells. Slight knee bend. Push hips back. Lower along legs until hamstrings stretch.",tips:"Hinge, don't squat. Flat back always. Squeeze glutes to return."},
-    {name:"Bulgarian Split Squat",badge:"db",sets:3,repRange:"8-10/leg",rest:"90 sec",notes:"Back foot elevated on bench. Hold dumbbells at sides. Lower until front thigh is parallel to floor.",tips:"Front leg does most work. Keep torso upright. Best replacement for belt squat."},
-    {name:"Cable Hamstring Curl (Ares)",badge:"ares",sets:3,repRange:"12-15",rest:"60 sec",notes:"Ankle strap attached. Stand upright holding rack. Curl heel toward glutes. Lower slowly.",tips:"Slow controlled movement. No swinging."},
-    {name:"Dumbbell Walking Lunges",badge:"db",sets:3,repRange:"10/leg",rest:"75 sec",notes:"Hold dumbbells at sides. Step forward into lunge. Lower until back knee nearly touches floor.",tips:"Stay upright. Push through front heel. Smooth steps."},
-    {name:"Standing Calf Raises",badge:"db",sets:4,repRange:"15-20",rest:"45 sec",notes:"Hold dumbbells. Stand on a step if possible. Raise heels fully. Lower slowly for full stretch.",tips:"Full stretch at bottom. Full squeeze at top. Controlled speed."}
-  ],
-  day3:[
-    {name:"Lat Pulldown (Ares)",badge:"ares",sets:4,repRange:"8-10",rest:"90 sec",notes:"Pull elbows down toward hips, not just hands. Bring bar to upper chest. Control the return slowly.",tips:"Lean back slightly. Squeeze lats at bottom position."},
-    {name:"Barbell Row",badge:"rack",sets:3,repRange:"6-10",rest:"2 min",notes:"Hinge at hips, flat back. Pull bar to lower ribs. Lower controlled. No jerking.",tips:"Brace core. Elbows travel past your body. No back rounding."},
-    {name:"Seated Cable Row (Ares)",badge:"ares",sets:3,repRange:"10-12",rest:"75 sec",notes:"Sit tall on bench. Pull handle to lower chest. Squeeze shoulder blades together.",tips:"Don't let shoulders round forward on the return."},
-    {name:"Face Pulls (Ares)",badge:"ares",sets:3,repRange:"12-15",rest:"60 sec",notes:"Cable at forehead height. Pull rope to face with elbows wide and high. Squeeze rear delts hard.",tips:"Critical for shoulder health and golf swing. Never skip this."},
-    {name:"Cable Curl (Ares)",badge:"ares",sets:3,repRange:"10-12",rest:"60 sec",notes:"Stand at low pulley. Curl handles up toward shoulders. Keep elbows at sides.",tips:"Full extension at bottom. Squeeze at the top."},
-    {name:"Dumbbell Hammer Curl",badge:"db",sets:3,repRange:"10-12",rest:"60 sec",notes:"Neutral grip with thumbs pointing up. Curl up. Keep elbows still throughout.",tips:"Builds brachialis and forearm strength."}
-  ],
-  day4:[
-    {name:"Deadlift",badge:"rack",sets:4,repRange:"3-6",rest:"3 min",notes:"Bar over mid-foot. Hip hinge down. Chest up tall. Push floor away to stand. Bar stays close to legs throughout.",tips:"This is your main strength lift. Not a max attempt. Do back protection routine first."},
-    {name:"Goblet Squat",badge:"db",sets:3,repRange:"8-10",rest:"90 sec",notes:"Hold dumbbell at chest with both hands. Feet shoulder-width. Squat deep. Elbows inside knees.",tips:"Less spinal load than barbell squat. Great for golf stance and mobility."},
-    {name:"Cable Woodchoppers (Ares)",badge:"ares",sets:3,repRange:"12-15/side",rest:"60 sec",notes:"Cable at high position. Stand sideways. Pull handle diagonally from high to low. Rotate through core.",tips:"Directly helps your golf swing rotation. Explosive pull, slow controlled return."},
-    {name:"Reverse Lunges (Dumbbells)",badge:"db",sets:3,repRange:"10/leg",rest:"75 sec",notes:"Hold dumbbells at sides. Step backward into lunge. Lower until both knees at 90 degrees. Push through front heel.",tips:"Easier on knees than forward lunges. Good for balance."},
-    {name:"Hanging Leg Raises",badge:"bw",sets:3,repRange:"10-15",rest:"60 sec",notes:"Hang from pull-up bar. Raise knees or straight legs to waist height. Lower slowly.",tips:"No swinging. Control both the raising and lowering."},
-    {name:"Plank",badge:"bw",sets:3,repRange:"30-60 sec",rest:"45 sec",notes:"Forearms on floor. Body in one straight line from head to heels. Hold position.",tips:"Squeeze glutes and abs throughout. Breathe normally."}
-  ]
-};
+// YouTube search base
+const YT = 'https://www.youtube.com/results?search_query=how+to+';
+const EXRX = 'https://exrx.net/Search/SearchResults/';
 
-var BADGE_COLORS={ares:"badge-ares",rack:"badge-rack",db:"badge-db",bw:"badge-bw"};
-var BADGE_LABELS={ares:"Ares 2.0",rack:"Rack/Bar",db:"Dumbbells",bw:"Bodyweight"};
-var NUM_COLORS={ares:"background:var(--teal-pale);color:var(--teal);",rack:"background:var(--blue-pale);color:var(--blue);",db:"background:var(--amber-pale);color:var(--amber);",bw:"background:#F1EFE8;color:#5F5E5A;"};
-var DAY_COLORS={day1:{bg:"var(--blue-pale)",color:"var(--blue)",label:"Push"},day2:{bg:"var(--red-pale)",color:"var(--red)",label:"Legs"},day3:{bg:"var(--teal-pale)",color:"var(--teal)",label:"Pull"},day4:{bg:"var(--green-pale)",color:"var(--green)",label:"Full Body"}};
-var DEADLIFT_PLAN=[{week:"1-2",weight:"115 lbs",sets:"4 x 5"},{week:"3-4",weight:"125 lbs",sets:"4 x 5"},{week:"5-6",weight:"135 lbs",sets:"4 x 5"},{week:"7-8",weight:"145 lbs",sets:"4 x 5"},{week:"9-10",weight:"155 lbs",sets:"4 x 4-5"},{week:"11-12",weight:"165-175 lbs",sets:"4 x 3-5"}];
-var PROGRESS_LIFTS=[{name:"Bench Press",target:"135-185 lbs",start:"95-115 lbs",notes:"4x5-8"},{name:"Back Squat",target:"135-225 lbs",start:"95-115 lbs",notes:"4x5-8"},{name:"Deadlift",target:"155-175 lbs",start:"95-115 lbs",notes:"4x3-6"},{name:"Overhead Press",target:"85-115 lbs",start:"55-65 lbs",notes:"3x6-8"},{name:"Barbell Row",target:"115-155 lbs",start:"75-95 lbs",notes:"3x6-10"},{name:"Romanian Deadlift",target:"115-155 lbs",start:"65-85 lbs",notes:"3x8-10"}];
-var GOLF_CIRCUIT=[{name:"Torso Rotations",reps:"15 reps",desc:"Feet shoulder-width. Arms crossed on chest. Rotate fully left and right. Keep hips stable."},{name:"Hip Rotations",reps:"10 each side",desc:"Hold a club behind shoulders. Rotate hips left and right while shoulders stay level."},{name:"Shoulder Dislocates",reps:"15 reps",desc:"Hold a band with wide grip. Rotate arms overhead and behind back. Improves shoulder flexibility."},{name:"Cat/Cow Stretch",reps:"10 reps",desc:"On hands and knees. Arch back up (cat), then let it sag down (cow). Mobilizes the spine."},{name:"90/90 Hip Stretch",reps:"45 sec each side",desc:"Sit with front and back leg at 90 degrees. Lean forward over front shin. Opens hip for golf rotation."}];
+const day1Data = [
+  { name:"Barbell Bench Press", badge:"rack", sets:4, repRange:"5–8", rest:"2 min",
+    muscles:["Chest (primary)","Front Shoulders","Triceps"],
+    setup:"Set bar at chest height in rack. Lie flat. Eyes under bar. Feet flat on floor.",
+    steps:["Grip bar slightly wider than shoulders — thumbs wrapped around bar","Lift bar off rack and hold directly over chest with arms straight","Take a breath and brace your core tight","Lower bar slowly to mid-chest over 2–3 seconds — elbows at 45° angle, not flared wide","Touch chest lightly — do not bounce","Press bar back up in a slight arc toward the rack until arms are fully extended","Breathe out as you press up"],
+    mistakes:["Flaring elbows out to 90° — strains shoulder joints","Bouncing bar off chest — removes tension and is dangerous","Lifting feet off the floor — reduces stability","Wrists bending backward — keep them straight and stacked over elbows"],
+    ytq:"barbell+bench+press+form+tutorial",
+    exrq:"Barbell+Bench+Press" },
 
-var activeDates={day1:todayKey(),day2:todayKey(),day3:todayKey(),day4:todayKey()};
-var historyMonth={year:new Date().getFullYear(),month:new Date().getMonth()};
+  { name:"Incline Dumbbell Press", badge:"db", sets:3, repRange:"8–10", rest:"90 sec",
+    muscles:["Upper Chest (primary)","Front Shoulders","Triceps"],
+    setup:"Set bench to 30–35° incline. Sit back with dumbbells resting on thighs. Use thighs to kick them up as you lean back.",
+    steps:["Hold dumbbells at chest level, palms facing forward","Feet flat on floor, back pressed into bench","Press dumbbells upward and slightly inward until arms are fully extended","At top, dumbbells should nearly touch — don't clank them","Lower slowly back to chest over 2–3 seconds","Keep wrists straight throughout the movement"],
+    mistakes:["Setting bench too steep (above 45°) — shifts load to shoulders","Letting elbows flare too wide","Dropping dumbbells too low below chest level"],
+    ytq:"incline+dumbbell+press+form",
+    exrq:"Dumbbell+Incline+Press" },
 
-function todayKey(){var d=new Date();return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate());}
-function pad(n){return n<10?"0"+n:String(n);}
-function formatDate(dk){var p=dk.split("-");var months=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];var days=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];var dt=new Date(+p[0],+p[1]-1,+p[2]);return days[dt.getDay()]+", "+months[+p[1]-1]+" "+p[2]+", "+p[0];}
-function isToday(dk){return dk===todayKey();}
-function skey(dc,dk,ei,si,f){return"wd_"+dc+"_"+dk+"_e"+ei+"_s"+si+"_"+f;}
-function lf(k,d){try{var v=localStorage.getItem(k);return v!==null?v:(d||"");}catch(e){return d||"";}}
-function sf(k,v){try{localStorage.setItem(k,v);flashSaved();}catch(e){}}
-var _st=null;
-function flashSaved(){var el=document.getElementById("save-indicator");if(el){el.textContent="Saved automatically";clearTimeout(_st);_st=setTimeout(function(){el.textContent="All changes saved automatically";},1500);}}
+  { name:"Cable Chest Fly (Ares)", badge:"ares", sets:3, repRange:"12–15", rest:"75 sec",
+    muscles:["Chest (primary)","Front Shoulders"],
+    setup:"Set both Ares pulleys to slightly above chest height. Stand in center, one foot slightly forward.",
+    steps:["Grab one handle in each hand, step forward so cables have tension","Arms slightly bent — keep that bend the whole time, never straighten fully","Lean forward slightly from hips — chest out","Bring handles together in an arc in front of your chest","Squeeze chest hard at the center for 1 second","Slowly return arms back to the stretched position — feel the chest stretch","Breathe out as you bring arms together"],
+    mistakes:["Straightening arms fully — this is a fly, not a press","Going too heavy — ruins the arc motion","Rushing the return — slow return builds the most muscle"],
+    ytq:"cable+chest+fly+form+tutorial",
+    exrq:"Cable+Fly" },
 
-function buildDateBar(dc){
-  var c=document.getElementById("dateBar-"+dc);if(!c)return;
-  var dk=activeDates[dc];var past=!isToday(dk);
-  c.innerHTML='<div class="date-bar"><div><div class="date-bar-label">WORKOUT DATE</div><div class="date-display">'+formatDate(dk)+'</div></div><div class="date-controls"><button class="date-nav-btn" onclick="navDate(\''+dc+'\',-1)">&#9664;</button><button class="date-nav-btn" onclick="navDate(\''+dc+'\',1)"'+(isToday(dk)?' disabled style="opacity:0.4;"':'')+'>&#9654;</button>'+(past?'<button class="today-btn" onclick="goToday(\''+dc+'\')">Today</button>':'')+''+(past?'<span class="past-badge">Viewing past</span>':'')+'</div></div>';
-}
+  { name:"Standing Overhead Press", badge:"rack", sets:3, repRange:"6–8", rest:"2 min",
+    muscles:["Front & Side Shoulders (primary)","Triceps","Upper Traps"],
+    setup:"Set bar at upper chest height in rack. Step close, grip just outside shoulder width.",
+    steps:["Unrack bar and hold at shoulder level — elbows slightly in front of bar","Feet shoulder-width apart, slight bend in knees","Take a big breath and brace your core and glutes hard","Press bar straight up — tuck chin slightly as bar passes your face","Lock arms fully at top — bar should be directly over your head","Lower bar back to shoulders in a controlled manner","Keep core braced the entire time — do not arch back"],
+    mistakes:["Arching the lower back excessively — puts pressure on spine","Pressing bar forward instead of straight up","Not bracing core — leads to lower back pain","Using leg drive (turning it into a push press)"],
+    ytq:"overhead+press+form+barbell",
+    exrq:"Barbell+Overhead+Press" },
 
-function navDate(dc,dir){
-  var cur=activeDates[dc];var p=cur.split("-").map(Number);var dt=new Date(p[0],p[1]-1,p[2]);
-  dt.setDate(dt.getDate()+dir);
-  var nk=dt.getFullYear()+"-"+pad(dt.getMonth()+1)+"-"+pad(dt.getDate());
-  if(nk>todayKey())return;
-  activeDates[dc]=nk;buildDateBar(dc);buildExercises(dc,dc+"-exercises");
-}
-function goToday(dc){activeDates[dc]=todayKey();buildDateBar(dc);buildExercises(dc,dc+"-exercises");}
+  { name:"Cable Lateral Raise (Ares)", badge:"ares", sets:3, repRange:"12–15", rest:"60 sec",
+    muscles:["Side Shoulders (primary)","Upper Traps (secondary)"],
+    setup:"Set Ares pulley to lowest position. Stand sideways to machine. Grab handle with the hand furthest from machine.",
+    steps:["Stand tall, slight forward lean from hips","Keep a very slight bend in your elbow — lock that angle in","Raise arm up and out to the side until it reaches shoulder height","Pause for 1 second at the top","Lower slowly — 3 counts down — back to starting position","Do NOT shrug your shoulder up as you raise","Keep your working arm slightly in front of your body — not directly out to the side"],
+    mistakes:["Using too much weight and swinging the body","Shrugging the shoulder — shifts work to traps","Raising arm above shoulder height — diminishing returns","Bending elbow more as you fatigue"],
+    ytq:"cable+lateral+raise+form",
+    exrq:"Cable+Lateral+Raise" },
 
-function buildExercises(dc,cid){
-  var c=document.getElementById(cid);if(!c)return;
-  var data=DAY_DATA[dc];var dk=activeDates[dc];var html="";
-  data.forEach(function(ex,i){
-    var eid=dc+"_"+dk+"_ex"+i;var shtml="";
-    for(var s=0;s<ex.sets;s++){
-      var done=lf(skey(dc,dk,i,s,"done"))==="1";
-      var wv=lf(skey(dc,dk,i,s,"weight"),"");var rv=lf(skey(dc,dk,i,s,"reps"),"");
-      shtml+='<div class="set-row"><div class="set-check'+(done?" done":"")+'" id="'+eid+'-s'+s+'" onclick="toggleSet(\''+eid+'\','+s+',\''+dc+'\',\''+dk+'\','+i+')">'+(done?"&#10003;":"")+'</div><span class="set-label">Set '+(s+1)+'</span><input type="number" class="set-input" placeholder="lbs" value="'+wv+'" onchange="sf(\''+skey(dc,dk,i,s,'weight')+'\',this.value)" oninput="sf(\''+skey(dc,dk,i,s,'weight')+'\',this.value)"><span class="set-x">x</span><input type="number" class="set-reps" placeholder="reps" value="'+rv+'" onchange="sf(\''+skey(dc,dk,i,s,'reps')+'\',this.value)" oninput="sf(\''+skey(dc,dk,i,s,'reps')+'\',this.value)"><span class="set-target">'+ex.repRange+'</span></div>';
-    }
-    var prog=getProgress(dc,dk,i,ex.sets);var pct=prog.total>0?Math.round((prog.done/prog.total)*100):0;
-    html+='<div class="exercise-card" id="'+eid+'-card"><div class="exercise-header" onclick="toggleCard(\''+eid+'-card\')"><div class="exercise-num" style="'+NUM_COLORS[ex.badge]+'">'+(i+1)+'</div><div style="flex:1;"><div class="exercise-name">'+ex.name+'</div><div class="exercise-meta">'+ex.sets+' sets &middot; '+ex.repRange+' reps &middot; Rest '+ex.rest+'</div></div><span class="exercise-badge '+BADGE_COLORS[ex.badge]+'">'+BADGE_LABELS[ex.badge]+'</span><span class="chevron">&#9660;</span></div><div class="exercise-body"><div class="instructions"><div style="font-weight:500;font-size:12px;margin-bottom:3px;color:var(--gray-text);">How to perform:</div><p style="margin-bottom:5px;">'+ex.notes+'</p></div><div class="tip-row">Tip: '+ex.tips+'</div><div class="set-tracker-title">Track Your Sets</div><div class="sets-grid">'+shtml+'</div><div class="progress-row"><div class="progress-bar-bg"><div class="progress-bar-fill" id="'+eid+'-bar" style="width:'+pct+'%"></div></div><span class="progress-pct" id="'+eid+'-pct">'+pct+'%</span></div></div></div>';
-  });
-  c.innerHTML=html;updateDaySummary(dc,dk);
-}
+  { name:"Cable Triceps Pushdown (Ares)", badge:"ares", sets:3, repRange:"10–15", rest:"60 sec",
+    muscles:["Triceps (primary)"],
+    setup:"Set Ares pulley to high position. Attach rope. Stand facing machine, feet shoulder-width.",
+    steps:["Grab rope with both hands, palms facing each other","Pull elbows in tight to your sides — they stay there the whole time","Start with forearms parallel to floor","Push rope down and slightly outward at the bottom — split the rope at the end","Fully extend arms — feel the tricep squeeze","Slowly return up until forearms are parallel — do not let elbows lift","Keep upper body still — only forearms move"],
+    mistakes:["Letting elbows flare out to the sides","Leaning forward excessively to use body weight","Not getting full extension at the bottom","Going too heavy and using shoulders"],
+    ytq:"cable+triceps+pushdown+rope+form",
+    exrq:"Cable+Pushdown" }
+];
 
-function getProgress(dc,dk,ei,ns){var done=0;for(var s=0;s<ns;s++){if(lf(skey(dc,dk,ei,s,"done"))==="1")done++;}return{total:ns,done:done};}
+const day2Data = [
+  { name:"Back Squat", badge:"rack", sets:4, repRange:"5–8", rest:"2 min",
+    muscles:["Quads (primary)","Glutes","Hamstrings","Core"],
+    setup:"Set bar at upper chest height. Step under bar, place across upper traps (not neck). Feet shoulder-width.",
+    steps:["Take bar across upper traps — squeeze shoulder blades together to create a shelf","Step back — feet shoulder-width, toes pointing slightly out (15–30°)","Take a breath and brace your core like you're about to take a punch","Begin the descent by pushing knees out and sitting back AND down","Go to at least parallel — thighs level with floor","Drive upward through your heels — push floor away","Keep chest up and eyes forward throughout — do not look down"],
+    mistakes:["Knees caving inward on the way up","Rounding the lower back at the bottom","Heels rising off the floor","Looking down — causes upper back to round","Squatting with feet too narrow"],
+    ytq:"back+squat+form+tutorial+beginners",
+    exrq:"Barbell+Squat" },
 
-function toggleSet(eid,si,dc,dk,ei){
-  var el=document.getElementById(eid+"-s"+si);var k=skey(dc,dk,ei,si,"done");
-  var was=lf(k)==="1";var now=!was;sf(k,now?"1":"0");
-  el.classList.toggle("done",now);el.innerHTML=now?"&#10003;":"";
-  updateCardProgress(eid,dc,dk,ei);updateDaySummary(dc,dk);
-}
+  { name:"Romanian Deadlift", badge:"db", sets:3, repRange:"8–10", rest:"90 sec",
+    muscles:["Hamstrings (primary)","Glutes","Lower Back"],
+    setup:"Hold dumbbells or barbell in front of thighs. Stand tall, feet hip-width apart.",
+    steps:["Hold weights directly in front of thighs with a neutral grip","Keep a very slight bend in the knees — lock that in","Push your hips BACKWARD like you're trying to touch a wall behind you","Let the weights lower naturally along your legs — they should almost touch your shins","Lower until you feel a strong stretch in your hamstrings — usually just below the knee","Drive hips forward to stand back up — squeeze glutes hard at top","Keep the bar or dumbbells close to your body the entire time"],
+    mistakes:["Bending knees too much — turns it into a squat","Rounding the lower back — very important to keep flat","Letting weights drift away from body","Going so low the lower back rounds"],
+    ytq:"romanian+deadlift+form+dumbbell",
+    exrq:"Romanian+Deadlift" },
 
-function updateCardProgress(eid,dc,dk,ei){
-  var data=DAY_DATA[dc];var ex=data[ei];var prog=getProgress(dc,dk,ei,ex.sets);
-  var pct=prog.total>0?Math.round((prog.done/prog.total)*100):0;
-  var b=document.getElementById(eid+"-bar");var p=document.getElementById(eid+"-pct");
-  if(b)b.style.width=pct+"%";if(p)p.textContent=pct+"%";
-}
+  { name:"Bulgarian Split Squat", badge:"db", sets:3, repRange:"8–10 /leg", rest:"90 sec",
+    muscles:["Quads (primary)","Glutes","Hip Flexors"],
+    setup:"Stand 2–3 feet in front of a bench. Place rear foot laces-down on bench. Hold dumbbells at sides.",
+    steps:["Stand far enough forward that your front shin stays vertical when you lower down","Lower your body straight down — do not lunge forward","Front knee tracks over your toes — push knee out, not in","Lower until front thigh is parallel to floor or slightly below","Keep your torso upright — do not lean too far forward","Push through your front heel to stand back up","Complete all reps on one leg before switching"],
+    mistakes:["Placing front foot too close to bench — forces knee too far forward","Letting front knee cave inward","Leaning too far forward","Pushing off the back foot — rear leg is just for balance"],
+    ytq:"bulgarian+split+squat+form+dumbbell",
+    exrq:"Bulgarian+Split+Squat" },
 
-function updateDaySummary(dc,dk){
-  var data=DAY_DATA[dc];var total=0,done=0;
-  data.forEach(function(ex,i){var p=getProgress(dc,dk,i,ex.sets);total+=p.total;done+=p.done;});
-  var pre=dc.replace("day","d");
-  var te=document.getElementById(pre+"-total");var de=document.getElementById(pre+"-done");
-  if(te)te.textContent=total;if(de)de.textContent=done;
-}
+  { name:"Cable Hamstring Curl (Ares)", badge:"ares", sets:3, repRange:"12–15", rest:"60 sec",
+    muscles:["Hamstrings (primary)","Glutes (secondary)"],
+    setup:"Attach ankle strap to Ares low pulley. Strap around one ankle. Hold rack for balance.",
+    steps:["Stand upright facing the machine — hold rack lightly for balance","Keep your standing leg slightly bent","Curl working heel toward glutes in a smooth arc","Hold at top for 1 second — squeeze hamstring","Lower slowly — 3 counts down — back to start","Keep hips still — do not swing or twist","Complete all reps on one leg, then switch"],
+    mistakes:["Swinging the hip to help the curl","Not fully lowering the weight back down","Leaning forward excessively","Going too heavy — ruins the movement pattern"],
+    ytq:"cable+standing+leg+curl+form",
+    exrq:"Cable+Leg+Curl" },
 
-function toggleCard(id){document.getElementById(id).classList.toggle("open");}
+  { name:"Dumbbell Walking Lunges", badge:"db", sets:3, repRange:"10 /leg", rest:"75 sec",
+    muscles:["Quads (primary)","Glutes","Hamstrings"],
+    setup:"Hold dumbbells at your sides. Stand tall with feet together. Find a clear path of about 10 steps.",
+    steps:["Take a large step forward with one leg","Lower your body until both knees are at 90° angles","Back knee should almost touch — but not touch — the floor","Keep front shin vertical — knee directly over ankle","Keep torso upright — do not lean forward","Push through front heel to bring rear foot forward into next step","Alternate legs with each step forward"],
+    mistakes:["Taking too short a step — front knee shoots past toes","Letting torso lean too far forward","Looking down — keep eyes forward","Rushing — take a controlled, deliberate step each time"],
+    ytq:"dumbbell+walking+lunge+form",
+    exrq:"Dumbbell+Lunge" },
 
-function getWorkoutsOnDate(dk){
-  var result=[];
-  ["day1","day2","day3","day4"].forEach(function(dc){
-    var data=DAY_DATA[dc];var has=false;
-    data.forEach(function(ex,i){for(var s=0;s<ex.sets;s++){if(lf(skey(dc,dk,i,s,"done"))==="1")has=true;}});
-    if(has){var c=DAY_COLORS[dc];result.push({dc:dc,label:c.label,bg:c.bg,color:c.color});}
-  });
-  return result;
-}
+  { name:"Standing Calf Raises", badge:"db", sets:4, repRange:"15–20", rest:"45 sec",
+    muscles:["Gastrocnemius (primary)","Soleus"],
+    setup:"Hold dumbbells at sides. Stand on the edge of a step if possible for full range of motion.",
+    steps:["Stand with feet hip-width, balls of feet on edge of step (or flat on floor)","Start with heels slightly below step level for a full stretch","Rise up onto your toes as high as possible","Hold the top position for 1–2 seconds — squeeze the calf hard","Lower heels slowly back down below the step for full stretch","Keep legs straight — slight bend in knee is okay","Use a slow controlled rhythm — this is not a fast exercise"],
+    mistakes:["Bouncing — not pausing at top or bottom","Only doing partial range of motion","Going too fast — defeats the purpose","Using momentum instead of muscle"],
+    ytq:"standing+calf+raise+form",
+    exrq:"Calf+Raise" }
+];
 
-function buildHistoryCalendar(){
-  var y=historyMonth.year,m=historyMonth.month;
-  var MONTHS=["January","February","March","April","May","June","July","August","September","October","November","December"];
-  document.getElementById("history-month-title").textContent=MONTHS[m]+" "+y;
-  var HDRS=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
-  document.getElementById("cal-headers").innerHTML=HDRS.map(function(h){return'<div class="cal-header">'+h+'</div>';}).join("");
-  var firstDay=new Date(y,m,1).getDay();var dim=new Date(y,m+1,0).getDate();var tk=todayKey();
-  var cells="";
-  for(var i=0;i<firstDay;i++)cells+='<div class="cal-day empty"></div>';
-  for(var d=1;d<=dim;d++){
-    var dk=y+"-"+pad(m+1)+"-"+pad(d);
-    var wo=getWorkoutsOnDate(dk);var isT=dk===tk;var hasW=wo.length>0;
-    var dots=wo.map(function(w){return'<div class="cal-workout-dot" style="background:'+w.bg+';color:'+w.color+';">'+w.label+'</div>';}).join("");
-    cells+='<div class="cal-day'+(hasW?" has-workout":"")+(isT?" today":"")+'" '+(hasW?'onclick="showHistoryDetail(\''+dk+'\')"':'')+' ><div class="cal-day-num">'+d+'</div>'+dots+'</div>';
-  }
-  document.getElementById("cal-grid").innerHTML=cells;
-  document.getElementById("history-detail").innerHTML="";
-}
+const day3Data = [
+  { name:"Lat Pulldown (Ares)", badge:"ares", sets:4, repRange:"8–10", rest:"90 sec",
+    muscles:["Lats (primary)","Biceps","Mid Back"],
+    setup:"Sit at Ares with lat bar attached to high pulley. Secure thighs under pad if available.",
+    steps:["Grip bar slightly wider than shoulder width — overhand grip","Lean back slightly — about 15–20° — keep this angle throughout","Pull the bar down toward your upper chest by driving your elbows DOWN and BACK","Squeeze your shoulder blades together at the bottom","Bar should touch or nearly touch your upper chest","Slowly let bar rise back up — full arm extension at the top","Feel the stretch in your lats at the top before the next rep"],
+    mistakes:["Pulling bar behind the neck — puts spine at risk","Using too much weight and rocking the body","Not getting full extension at the top","Pulling with hands instead of elbows"],
+    ytq:"lat+pulldown+form+cable",
+    exrq:"Pulldown" },
 
-function showHistoryDetail(dk){
-  var wo=getWorkoutsOnDate(dk);if(!wo.length)return;
-  var html='<div><div class="section-title" style="font-size:16px;margin-bottom:10px;">Workout on '+formatDate(dk)+'</div>';
-  wo.forEach(function(w){
-    var data=DAY_DATA[w.dc];
-    html+='<div class="history-entry"><div class="history-entry-header"><span class="history-date-label">'+w.label+'</span><span class="history-day-badge" style="background:'+w.bg+';color:'+w.color+';">Day '+w.dc.replace("day","")+'</span></div><div class="history-sets">';
-    data.forEach(function(ex,i){
-      for(var s=0;s<ex.sets;s++){
-        var done=lf(skey(w.dc,dk,i,s,"done"))==="1";
-        var weight=lf(skey(w.dc,dk,i,s,"weight"),"");
-        var reps=lf(skey(w.dc,dk,i,s,"reps"),"");
-        if(done||weight||reps){
-          html+='<div class="history-set-row"><div class="history-set-done" style="background:'+(done?"var(--green-light)":"#E8E6E0")+';color:'+(done?"#fff":"var(--gray-muted)")+';">'+(done?"&#10003;":"")+'</div><span style="flex:1;font-weight:500;color:var(--gray-text);">'+ex.name+'</span><span style="font-size:11px;color:var(--gray-muted);">Set '+(s+1)+'</span><span style="font-size:12px;font-weight:600;">'+(weight?weight+"lb":"--")+'</span><span style="font-size:11px;color:var(--gray-muted);">x</span><span style="font-size:12px;font-weight:600;">'+(reps?reps+" reps":"--")+'</span></div>';
-        }
-      }
+  { name:"Barbell Row", badge:"rack", sets:3, repRange:"6–10", rest:"2 min",
+    muscles:["Mid Back (primary)","Lats","Biceps","Rear Shoulders"],
+    setup:"Bar on floor or in rack at mid-shin. Hinge over bar, back flat, knees slightly bent.",
+    steps:["Stand over bar, feet hip-width. Hinge at hips until back is roughly 45° from floor","Grip bar just outside shoulder width — overhand","Keep lower back flat — this is crucial — do not round","Pull bar toward your lower ribcage — not your belly, not your chest","Drive elbows back past your torso — squeeze shoulder blades together","Lower bar slowly — do not just drop it","Keep bar close to your body throughout the movement"],
+    mistakes:["Rounding the lower back — injury risk","Pulling to the belly button instead of lower ribs","Using too much leg drive to jerk the weight up","Letting shoulder blades spread forward — keep them together"],
+    ytq:"barbell+row+form+tutorial",
+    exrq:"Barbell+Row" },
+
+  { name:"Seated Cable Row (Ares)", badge:"ares", sets:3, repRange:"10–12", rest:"75 sec",
+    muscles:["Mid Back (primary)","Lats","Biceps","Rear Shoulders"],
+    setup:"Sit at Ares with V-bar or straight bar on low pulley. Feet on platform, knees slightly bent.",
+    steps:["Sit tall — chest up, not hunched over","Start with arms extended forward — feel the stretch in your back","Pull handle toward your lower chest — elbows travel back tight to your sides","Squeeze your shoulder blades together hard at the finish","Hold squeeze for 1 second","Slowly return until arms are fully extended — let back stretch forward slightly","Do not rock back and forth — stay upright"],
+    mistakes:["Rocking body forward and back to generate momentum","Pulling too high — toward chin instead of lower chest","Not achieving full extension on the way out","Letting shoulders roll forward"],
+    ytq:"seated+cable+row+form",
+    exrq:"Seated+Cable+Row" },
+
+  { name:"Face Pulls (Ares)", badge:"ares", sets:3, repRange:"12–15", rest:"60 sec",
+    muscles:["Rear Shoulders (primary)","Rotator Cuff","Mid Traps"],
+    setup:"Set Ares pulley at forehead height. Attach rope handle. Stand back far enough for tension.",
+    steps:["Grab rope with both hands, thumbs pointing toward you","Step back so arms are extended straight forward — cable under slight tension","Pull rope toward your face — hands aim for your ears, not your chin","Elbows travel wide and high — end position is like a 'double bicep' pose","Hold at the face for 1 second — squeeze rear delts and rotator cuff","Slowly return arms to start — maintain tension, don't let stack drop","Keep core braced — do not lean back"],
+    mistakes:["Pulling toward the neck or chest instead of the face","Keeping elbows low — reduces rear delt activation","Going too heavy — ruins the rotation pattern","Rushing through the reps"],
+    ytq:"face+pull+cable+form+shoulder",
+    exrq:"Cable+Face+Pull" },
+
+  { name:"Cable Curl (Ares)", badge:"ares", sets:3, repRange:"10–12", rest:"60 sec",
+    muscles:["Biceps (primary)","Brachialis"],
+    setup:"Set Ares low pulley. Attach straight bar or EZ-bar. Stand facing machine, feet shoulder-width.",
+    steps:["Grip bar with underhand (palms up) grip, hands shoulder-width","Stand upright — upper arms pinned at your sides, elbows stay there","Curl bar upward in an arc toward your shoulders","Squeeze bicep hard at the top — hold 1 second","Lower slowly — 3 counts down — all the way to full arm extension","Do not let lower back arch or elbows drift forward","Keep wrists straight — do not curl them"],
+    mistakes:["Letting elbows swing forward as you curl","Not fully lowering to full extension — partial reps shortchange results","Using body momentum or rocking","Wrists curling up at the top"],
+    ytq:"cable+bicep+curl+form",
+    exrq:"Cable+Curl" },
+
+  { name:"Dumbbell Hammer Curl", badge:"db", sets:3, repRange:"10–12", rest:"60 sec",
+    muscles:["Biceps","Brachialis (primary)","Forearms"],
+    setup:"Hold dumbbells at your sides with a neutral grip — thumbs pointing up, palms facing each other.",
+    steps:["Stand tall, upper arms pinned at sides — they stay there","Curl dumbbell upward keeping the neutral (thumbs-up) grip throughout","Do not rotate your wrist — that turns it into a regular curl","Curl until dumbbell is at shoulder level","Squeeze at the top for 1 second","Lower slowly to full extension","You can curl both arms together or alternate — either works"],
+    mistakes:["Rotating wrist during the curl","Swinging the arm to help lift","Not lowering all the way down","Elbows drifting forward"],
+    ytq:"hammer+curl+form+dumbbell",
+    exrq:"Dumbbell+Hammer+Curl" }
+];
+
+const day4Data = [
+  { name:"Deadlift", badge:"rack", sets:4, repRange:"3–6", rest:"3 min",
+    muscles:["Hamstrings (primary)","Glutes","Lower Back","Traps","Core"],
+    setup:"Bar on floor. Stand with feet hip-width, bar over mid-foot (about 1 inch from shins). Toes forward or slightly out.",
+    steps:["Hinge at hips and bend knees to grip bar — just outside your legs, overhand","Before lifting: chest up, back flat, lats tight (think: 'protect your armpits')","Take a big breath into your belly and brace core like a punch is coming","Push the floor away with your feet — do not think 'pull'","Bar travels in a straight vertical line — must stay close to your legs the whole way up","Hips and shoulders rise at the same rate — do not let hips shoot up first","Lock out at top: stand tall, squeeze glutes, hips fully forward","Lower bar by pushing hips back first, then bending knees once bar passes them"],
+    mistakes:["Bar drifting away from body — dramatically increases back injury risk","Hips shooting up first — turns it into a back-dominant 'stiff leg' lift","Rounding the lower back — most dangerous mistake","Jerking the bar — pull the slack out of the bar first, then lift smoothly","Looking up excessively — neutral spine means neutral neck too"],
+    ytq:"deadlift+form+tutorial+beginners",
+    exrq:"Deadlift" },
+
+  { name:"Goblet Squat", badge:"db", sets:3, repRange:"8–10", rest:"90 sec",
+    muscles:["Quads (primary)","Glutes","Core"],
+    setup:"Hold one dumbbell vertically at chest height with both hands cupped around the top.",
+    steps:["Hold dumbbell at chest — elbows pointing down","Feet shoulder-width or slightly wider, toes out 30°","Brace core. Begin descent by pushing knees out and hips back AND down","Keep dumbbell close to chest — do not let it pull you forward","Squat as deep as comfortable — ideally below parallel","At the bottom: elbows should be inside your knees — push knees out with elbows","Drive upward through your whole foot back to standing","Chest stays up throughout — do not collapse forward"],
+    mistakes:["Letting knees cave inward","Leaning excessively forward as you descend","Letting dumbbell drop away from chest","Shallow squats — try to get depth"],
+    ytq:"goblet+squat+form+dumbbell",
+    exrq:"Goblet+Squat" },
+
+  { name:"Cable Woodchoppers (Ares)", badge:"ares", sets:3, repRange:"12–15 /side", rest:"60 sec",
+    muscles:["Obliques (primary)","Core","Shoulders"],
+    setup:"Set Ares cable to high position. Stand sideways to machine, arm's length away.",
+    steps:["Grab handle with both hands — arms extended toward cable at high position","Feet shoulder-width, slight bend in knees — athletic stance","Rotate your torso and pull handle diagonally DOWN across your body","End position: hands near opposite hip, arms extended","Movement comes from ROTATING your core — not just moving your arms","Hips stay facing forward — only torso rotates","Slowly return to start — resist the cable pulling you back","This rotation pattern is exactly like your golf downswing — practice it with intention"],
+    mistakes:["Moving arms without rotating the torso","Letting hips twist — keep them square","Going too heavy — ruins the rotation","Rushing — slow controlled rotation builds golf power"],
+    ytq:"cable+woodchop+core+rotation+form",
+    exrq:"Cable+Woodchop" },
+
+  { name:"Reverse Lunges (Dumbbells)", badge:"db", sets:3, repRange:"10 /leg", rest:"75 sec",
+    muscles:["Quads (primary)","Glutes","Hamstrings"],
+    setup:"Hold dumbbells at sides. Stand tall, feet together.",
+    steps:["Take a controlled step BACKWARD with one leg","Lower body until both knees are at roughly 90°","Back knee should hover just above the floor — do not slam it down","Front knee stays directly over front ankle — not caving in","Keep torso upright — do not lean forward","Push through front heel to step back to starting position","Alternate legs or complete all reps on one side — either works"],
+    mistakes:["Taking too short a step — front knee shoots forward past toes","Torso leaning forward","Front knee collapsing inward","Stepping back too far — loses balance"],
+    ytq:"reverse+lunge+dumbbell+form",
+    exrq:"Dumbbell+Reverse+Lunge" },
+
+  { name:"Hanging Leg Raises", badge:"bw", sets:3, repRange:"10–15", rest:"60 sec",
+    muscles:["Lower Abs (primary)","Hip Flexors","Core"],
+    setup:"Hang from pull-up bar with overhand grip. Arms fully extended. Body relaxed.",
+    steps:["Let body hang completely still before starting","Brace your core — pull belly button toward spine","Raise your knees (or straight legs for harder version) up toward your chest","Go until thighs are parallel to floor or higher","Hold at the top for 1 second","Lower slowly — do not just drop your legs","Keep movement controlled — no swinging of the body"],
+    mistakes:["Swinging body to create momentum","Not bracing core first — lets hip flexors take over","Dropping legs quickly — wastes the hardest part","Looking up straining the neck — look straight ahead"],
+    ytq:"hanging+leg+raise+form+abs",
+    exrq:"Hanging+Leg+Raise" },
+
+  { name:"Plank", badge:"bw", sets:3, repRange:"30–60 sec", rest:"45 sec",
+    muscles:["Core (primary)","Shoulders","Glutes"],
+    setup:"On a mat. Forearms on floor, elbows under shoulders. Toes on floor.",
+    steps:["Place forearms on floor — elbows directly under shoulders","Lift your body so only forearms and toes are touching floor","Body forms a straight line — head to heels","Squeeze your glutes hard — this protects your lower back","Brace your abs — think about pulling your belly button to your spine","Keep your hips level — do not let them sag down or pike up","Breathe normally — do not hold your breath","Hold the position for the target time"],
+    mistakes:["Hips sagging down — puts stress on lower back","Hips piked up — too easy, defeats the purpose","Holding breath — breathe steadily","Head dropping — keep neck in neutral position"],
+    ytq:"plank+form+proper+technique",
+    exrq:"Plank" }
+];
+
+const golfCircuit = [
+  { name:"Torso Rotations", reps:"15 reps", desc:"Stand feet shoulder-width. Arms crossed on chest. Rotate fully left and right. Keep hips stable." },
+  { name:"Hip Rotations", reps:"10 each side", desc:"Hold a club behind shoulders. Rotate hips left and right while shoulders stay level." },
+  { name:"Shoulder Dislocates", reps:"15 reps", desc:"Hold a band with wide grip. Rotate arms overhead and behind back slowly. Improves backswing shoulder flexibility." },
+  { name:"Cat/Cow Stretch", reps:"10 reps", desc:"On hands and knees. Arch back up (cat), then let it sag down (cow). Mobilizes the spine." },
+  { name:"90/90 Hip Stretch", reps:"45 sec each side", desc:"Sit with front and back leg at 90°. Lean forward over front shin. Opens hips for better rotation." }
+];
+
+const progressLifts = [
+  { name:"Bench Press", target:"135–185 lbs", start:"95", notes:"4×5–8" },
+  { name:"Back Squat", target:"135–225 lbs", start:"95", notes:"4×5–8" },
+  { name:"Deadlift", target:"155–175 lbs", start:"115", notes:"4×3–6" },
+  { name:"Overhead Press", target:"85–115 lbs", start:"55", notes:"3×6–8" },
+  { name:"Barbell Row", target:"115–155 lbs", start:"75", notes:"3×6–10" },
+  { name:"Romanian Deadlift", target:"115–155 lbs", start:"65", notes:"3×8–10" }
+];
+
+const deadliftPlan = [
+  { week:"1–2", weight:"115 lbs", sets:"4 × 5" },
+  { week:"3–4", weight:"125 lbs", sets:"4 × 5" },
+  { week:"5–6", weight:"135 lbs", sets:"4 × 5" },
+  { week:"7–8", weight:"145 lbs", sets:"4 × 5" },
+  { week:"9–10", weight:"155 lbs", sets:"4 × 4–5" },
+  { week:"11–12", weight:"165–175 lbs", sets:"4 × 3–5" }
+];
+
+const badgeColors = { ares:"badge-ares", rack:"badge-rack", db:"badge-db", bw:"badge-bw" };
+const badgeLabels = { ares:"Ares 2.0", rack:"Rack/Bar", db:"Dumbbells", bw:"Bodyweight" };
+const numColors = { ares:"background:var(--teal-pale);color:var(--teal);", rack:"background:var(--blue-pale);color:var(--blue);", db:"background:var(--amber-pale);color:var(--amber);", bw:"background:#F1EFE8;color:#5F5E5A;" };
+const dataMap = { d1:day1Data, d2:day2Data, d3:day3Data, d4:day4Data };
+
+function lsGet(k){try{return localStorage.getItem(k);}catch(e){return null;}}
+function lsSet(k,v){try{localStorage.setItem(k,v);}catch(e){}}
+function lsDel(k){try{localStorage.removeItem(k);}catch(e){}}
+
+const ytIcon = `<div class="demo-icon"><svg width="10" height="8" viewBox="0 0 10 8"><polygon points="3,0 10,4 3,8"/></svg></div>`;
+
+function buildExercises(data, containerId, dayCode) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  let html = '';
+  data.forEach((ex, i) => {
+    const cid = `${dayCode}-card-${i}`;
+
+    // Steps HTML
+    let stepsHtml = '';
+    ex.steps.forEach((s,si) => {
+      stepsHtml += `<li class="step-item"><div class="step-circle">${si+1}</div><div class="step-text">${s}</div></li>`;
     });
-    html+='</div></div>';
+
+    // Muscles HTML
+    let musclesHtml = ex.muscles.map((m,mi) =>
+      `<span class="muscle-tag ${mi===0?'muscle-primary':'muscle-secondary'}">${m}</span>`
+    ).join('');
+
+    // Mistakes HTML
+    let mistakesHtml = ex.mistakes.map(m =>
+      `<li class="mistake-item"><div class="mistake-x">✕</div><span>${m}</span></li>`
+    ).join('');
+
+    // Set tracker
+    let setsHtml = '';
+    for (let s=1; s<=ex.sets; s++) {
+      const wk=`${cid}-w${s}`, rk=`${cid}-r${s}`, ck=`${cid}-s${s}`;
+      const sw=lsGet(wk)||'', sr=lsGet(rk)||'', done=lsGet(ck)==='1';
+      setsHtml += `<div class="set-row">
+        <div class="set-check${done?' done':''}" id="${ck}" onclick="toggleSet('${ck}','${dayCode}',${i},${ex.sets})">${done?'✓':''}</div>
+        <span class="set-label">Set ${s}</span>
+        <input type="number" class="set-input" placeholder="lbs" id="${wk}" value="${sw}" oninput="lsSet('${wk}',this.value)">
+        <span class="set-x">×</span>
+        <input type="number" class="set-reps" placeholder="reps" id="${rk}" value="${sr}" oninput="lsSet('${rk}',this.value)">
+        <span class="set-target">${ex.repRange}</span>
+      </div>`;
+    }
+
+    html += `
+    <div class="exercise-card" id="${cid}-card">
+      <div class="exercise-header" onclick="toggleCard('${cid}-card')">
+        <div class="exercise-num" style="${numColors[ex.badge]}">${i+1}</div>
+        <div style="flex:1;"><div class="exercise-name">${ex.name}</div><div class="exercise-meta">${ex.sets} sets · ${ex.repRange} reps · Rest ${ex.rest||'90 sec'}</div></div>
+        <span class="exercise-badge ${badgeColors[ex.badge]}">${badgeLabels[ex.badge]}</span>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="exercise-body">
+        <div class="card-tabs">
+          <button class="card-tab active" onclick="switchTab(event,'${cid}','how')">How To</button>
+          <button class="card-tab" onclick="switchTab(event,'${cid}','mistakes')">Form Tips</button>
+          <button class="card-tab" onclick="switchTab(event,'${cid}','track')">Track Sets</button>
+          <button class="card-tab" onclick="switchTab(event,'${cid}','demo')">Demo</button>
+        </div>
+
+        <div class="card-panel active" id="${cid}-how">
+          <div class="setup-box"><div class="setup-box-title">Setup</div>${ex.setup}</div>
+          <div style="margin-bottom:10px;"><div style="font-size:11px;font-weight:600;color:var(--gray-muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;">Muscles Worked</div><div class="muscles-row">${musclesHtml}</div></div>
+          <div style="font-size:11px;font-weight:600;color:var(--gray-muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;">Step-by-Step</div>
+          <ul class="steps-list">${stepsHtml}</ul>
+        </div>
+
+        <div class="card-panel" id="${cid}-mistakes">
+          <div style="font-size:11px;font-weight:600;color:var(--gray-muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px;">Common Mistakes to Avoid</div>
+          <ul class="mistakes-list">${mistakesHtml}</ul>
+          <div style="background:var(--green-pale);border-radius:8px;padding:10px 12px;margin-top:12px;font-size:13px;color:var(--green);">
+            <strong style="display:block;font-weight:600;margin-bottom:3px;">Golden Rule</strong>
+            If form breaks down, reduce the weight. Good form at lighter weight builds more strength than sloppy form with heavy weight.
+          </div>
+        </div>
+
+        <div class="card-panel" id="${cid}-track">
+          <div class="set-tracker-title">Track Your Sets</div>
+          <div class="sets-grid">${setsHtml}</div>
+          <div class="progress-row"><div class="progress-bar-bg"><div class="progress-bar-fill" id="${cid}-bar" style="width:0%"></div></div><span class="progress-pct" id="${cid}-pct">0%</span></div>
+        </div>
+
+        <div class="card-panel" id="${cid}-demo">
+          <div style="font-size:13px;color:var(--gray-muted);margin-bottom:14px;">Watch a video demonstration to see proper form in action.</div>
+          <a href="https://www.youtube.com/results?search_query=${ex.ytq}" target="_blank" class="demo-btn">
+            ${ytIcon} Watch on YouTube
+          </a>
+          <a href="https://exrx.net/Search/SearchResults/?query=${ex.exrq}" target="_blank" class="demo-btn exrx-btn" style="display:inline-flex;margin-top:10px;margin-left:0;">
+            📋 ExRx Exercise Guide
+          </a>
+          <div style="margin-top:14px;background:var(--amber-pale);border-radius:8px;padding:10px 12px;font-size:12px;color:var(--amber);">
+            <strong style="font-weight:600;">Search tip:</strong> On YouTube, look for videos by Jeff Nippard, Alan Thrall, or Starting Strength for the most technically accurate demonstrations.
+          </div>
+        </div>
+
+      </div>
+    </div>`;
   });
-  html+='</div>';
-  document.getElementById("history-detail").innerHTML=html;
-  document.getElementById("history-detail").scrollIntoView({behavior:"smooth",block:"start"});
+  container.innerHTML = html;
+  data.forEach((ex,i) => refreshBar(`${dayCode}-card-${i}`, ex.sets));
+  updateDayCount(dayCode);
 }
 
-function changeHistoryMonth(dir){
-  historyMonth.month+=dir;
-  if(historyMonth.month>11){historyMonth.month=0;historyMonth.year++;}
-  if(historyMonth.month<0){historyMonth.month=11;historyMonth.year--;}
-  buildHistoryCalendar();
+function switchTab(e, cid, panel) {
+  const body = e.target.closest('.exercise-body');
+  body.querySelectorAll('.card-tab').forEach(t => t.classList.remove('active'));
+  body.querySelectorAll('.card-panel').forEach(p => p.classList.remove('active'));
+  e.target.classList.add('active');
+  document.getElementById(`${cid}-${panel}`).classList.add('active');
+  e.stopPropagation();
 }
 
-function showPage(id){
-  document.querySelectorAll(".page").forEach(function(p){p.classList.remove("active");});
-  document.querySelectorAll(".nav-btn").forEach(function(b){b.classList.remove("active");});
-  document.getElementById("page-"+id).classList.add("active");
-  var pages=["schedule","day1","day2","day3","day4","golf","progress","history"];
-  var idx=pages.indexOf(id);if(idx>=0)document.querySelectorAll(".nav-btn")[idx].classList.add("active");
-  if(id==="history")buildHistoryCalendar();
+function toggleCard(id) { document.getElementById(id).classList.toggle('open'); }
+
+function toggleSet(ck, dayCode, exIdx, numSets) {
+  const el = document.getElementById(ck);
+  const done = lsGet(ck) !== '1';
+  lsSet(ck, done?'1':'0');
+  el.classList.toggle('done', done);
+  el.innerHTML = done ? '✓' : '';
+  refreshBar(`${dayCode}-card-${exIdx}`, numSets);
+  updateDayCount(dayCode);
 }
 
-function buildGolfCircuit(){
-  var c=document.getElementById("golf-circuit");if(!c)return;
-  c.innerHTML=GOLF_CIRCUIT.map(function(g){return'<div style="margin-bottom:9px;padding-bottom:9px;border-bottom:1px solid var(--green-mid);"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2px;"><span style="font-weight:600;font-size:13px;color:var(--text-dark);">'+g.name+'</span><span style="font-size:11px;background:var(--green);color:#fff;padding:2px 7px;border-radius:20px;">'+g.reps+'</span></div><div style="font-size:11px;color:var(--gray-muted);line-height:1.5;">'+g.desc+'</div></div>';}).join("");
+function refreshBar(cid, numSets) {
+  let done = 0;
+  for (let s=1;s<=numSets;s++){if(lsGet(`${cid}-s${s}`)==='1')done++;}
+  const pct = Math.round((done/numSets)*100);
+  const bar = document.getElementById(`${cid}-bar`);
+  const pctEl = document.getElementById(`${cid}-pct`);
+  if(bar) bar.style.width = pct+'%';
+  if(pctEl) pctEl.textContent = pct+'%';
 }
 
-function buildProgress(){
-  var c=document.getElementById("progress-lifts");if(!c)return;
-  c.innerHTML=PROGRESS_LIFTS.map(function(lift){
-    var saved=lf("lift_"+lift.name.replace(/ /g,"_"),"");
-    return'<div class="lift-row"><div><div class="lift-name">'+lift.name+'</div><div class="lift-details">'+lift.notes+' &middot; Start: '+lift.start+'</div></div><div class="lift-controls"><input type="number" class="lift-weight-input" id="lift-'+lift.name.replace(/ /g,"_")+'" placeholder="'+lift.start.split("-")[0]+'" value="'+saved+'"><span style="font-size:11px;color:var(--gray-muted);">lbs</span><button class="save-btn" onclick="saveLift(\''+lift.name+'\')">Save</button></div></div>';
-  }).join("");
-  var dt=document.getElementById("deadlift-table");
-  if(dt)dt.innerHTML=DEADLIFT_PLAN.map(function(row,i){return'<tr style="background:'+(i%2===0?"#fff":"#FAFAF8")+'"><td style="padding:7px 11px;color:var(--gray-muted);">Wk '+row.week+'</td><td style="padding:7px 11px;font-weight:600;">'+row.weight+'</td><td style="padding:7px 11px;color:var(--gray-text);">'+row.sets+'</td></tr>';}).join("");
-  var bw=lf("body_weight","");var bwEl=document.getElementById("body-weight");if(bwEl&&bw)bwEl.value=bw;
+function updateDayCount(dayCode) {
+  let done = 0;
+  dataMap[dayCode].forEach((ex,i) => {
+    for(let s=1;s<=ex.sets;s++){if(lsGet(`${dayCode}-card-${i}-s${s}`)==='1')done++;}
+  });
+  const el = document.getElementById(`${dayCode}-done`);
+  if(el) el.textContent = done;
 }
 
-function saveLift(name){
-  var el=document.getElementById("lift-"+name.replace(/ /g,"_"));if(!el)return;
-  sf("lift_"+name.replace(/ /g,"_"),el.value);
-  var btn=el.nextElementSibling.nextElementSibling;btn.textContent="Saved!";btn.style.background="var(--teal)";
-  setTimeout(function(){btn.textContent="Save";btn.style.background="var(--green)";},1500);
+function resetDay(dayCode) {
+  if(!confirm('Reset all sets for this day?')) return;
+  dataMap[dayCode].forEach((ex,i) => {
+    for(let s=1;s<=ex.sets;s++){lsDel(`${dayCode}-card-${i}-s${s}`);lsDel(`${dayCode}-card-${i}-w${s}`);lsDel(`${dayCode}-card-${i}-r${s}`);}
+  });
+  buildExercises(dataMap[dayCode], `day${dayCode.replace('d','')}-exercises`, dayCode);
 }
 
-function saveBodyWeight(){
-  var el=document.getElementById("body-weight");if(el)sf("body_weight",el.value);
+function saveDay(dayCode, dayName) {
+  const data = dataMap[dayCode];
+  const dateStr = new Date().toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric',year:'numeric'});
+  const entry = {date:dateStr, day:dayName, exercises:[]};
+  data.forEach((ex,i) => {
+    const sets = [];
+    for(let s=1;s<=ex.sets;s++){
+      const w=lsGet(`${dayCode}-card-${i}-w${s}`)||'–';
+      const r=lsGet(`${dayCode}-card-${i}-r${s}`)||'–';
+      const done=lsGet(`${dayCode}-card-${i}-s${s}`)==='1';
+      if(done||w!=='–'||r!=='–') sets.push({s,w,r,done});
+    }
+    if(sets.length) entry.exercises.push({name:ex.name, sets});
+  });
+  const history = JSON.parse(lsGet('workout_history')||'[]');
+  history.unshift(entry);
+  if(history.length>60) history.pop();
+  lsSet('workout_history', JSON.stringify(history));
+  const ind = document.getElementById(`${dayCode}-saved`);
+  if(ind){ind.classList.add('show');setTimeout(()=>ind.classList.remove('show'),2000);}
 }
 
-function setHeaderDate(){
-  var d=new Date();
-  var DAYS=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-  var MONS=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-  var el=document.getElementById("today-date");
-  if(el)el.innerHTML=DAYS[d.getDay()]+", "+MONS[d.getMonth()]+" "+d.getDate();
+function buildGolfCircuit() {
+  const c = document.getElementById('golf-circuit');
+  if(!c) return;
+  c.innerHTML = golfCircuit.map(g => `
+    <div style="margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid var(--green-mid);">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:3px;">
+        <span style="font-weight:600;font-size:14px;">${g.name}</span>
+        <span style="font-size:12px;background:var(--green);color:#fff;padding:2px 8px;border-radius:20px;">${g.reps}</span>
+      </div>
+      <div style="font-size:12px;color:var(--gray-muted);line-height:1.5;">${g.desc}</div>
+    </div>`).join('');
 }
 
-// Init
-setHeaderDate();
-["day1","day2","day3","day4"].forEach(function(dc){buildDateBar(dc);buildExercises(dc,dc+"-exercises");});
+function buildProgress() {
+  const c = document.getElementById('progress-lifts');
+  if(!c) return;
+  c.innerHTML = progressLifts.map(lift => {
+    const saved = lsGet('lift_'+lift.name)||'';
+    const key = lift.name.replace(/ /g,'_');
+    return `<div class="lift-row">
+      <div><div class="lift-name">${lift.name}</div><div class="lift-details">${lift.notes} · Target: ${lift.target}</div></div>
+      <div class="lift-controls">
+        <input type="number" class="lift-weight-input" id="lift-${key}" placeholder="${lift.start}" value="${saved}" oninput="lsSet('lift_${lift.name}',this.value)">
+        <span style="font-size:12px;color:var(--gray-muted);">lbs</span>
+        <button class="save-btn" onclick="flashSave('${lift.name}','${key}')">Save</button>
+      </div>
+    </div>`;
+  }).join('');
+  const dt = document.getElementById('deadlift-table');
+  if(dt) dt.innerHTML = deadliftPlan.map((row,i) => `<tr style="background:${i%2===0?'#fff':'#FAFAF8'};"><td style="padding:8px 12px;color:var(--gray-muted);">Wk ${row.week}</td><td style="padding:8px 12px;font-weight:600;">${row.weight}</td><td style="padding:8px 12px;color:var(--gray-text);">${row.sets}</td></tr>`).join('');
+  const bw = lsGet('body_weight');
+  if(bw){const el=document.getElementById('body-weight');if(el)el.value=bw;}
+}
+
+function flashSave(name, key) {
+  lsSet('lift_'+name, document.getElementById('lift-'+key).value);
+  const btn = event.target;
+  btn.textContent='Saved!';btn.style.background='var(--teal)';
+  setTimeout(()=>{btn.textContent='Save';btn.style.background='var(--green)';},1500);
+}
+
+function buildHistory() {
+  const list = document.getElementById('history-list');
+  const countEl = document.getElementById('history-count');
+  const history = JSON.parse(lsGet('workout_history')||'[]');
+  if(!history.length){
+    countEl.textContent='No workouts saved yet';
+    list.innerHTML='<div style="text-align:center;padding:30px;color:var(--gray-muted);font-size:14px;">No workouts saved yet.<br>Hit Save Workout after completing a day.</div>';
+    return;
+  }
+  countEl.textContent=`${history.length} workout${history.length===1?'':'s'} logged`;
+  list.innerHTML = history.map(entry => {
+    const exHtml = entry.exercises.map(ex => {
+      const sStr = ex.sets.map(s=>`Set ${s.s}: ${s.w} lbs × ${s.r} reps${s.done?' ✓':''}`).join(' | ');
+      return `<div class="history-exercise"><strong>${ex.name}</strong><br><span style="color:var(--gray-muted);font-size:12px;">${sStr}</span></div>`;
+    }).join('');
+    return `<div class="history-row"><div class="history-date">${entry.date} — ${entry.day}</div>${exHtml}</div>`;
+  }).join('');
+}
+
+function clearHistory(){
+  if(!confirm('Clear all workout history?')) return;
+  lsDel('workout_history');buildHistory();
+}
+
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active');
+  const pages=['schedule','day1','day2','day3','day4','golf','progress','history'];
+  const idx=pages.indexOf(id);
+  if(idx>=0) document.querySelectorAll('.nav-btn')[idx].classList.add('active');
+  if(id==='history') buildHistory();
+}
+
+function setDate(){
+  const d=new Date();
+  const days=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const el=document.getElementById('today-date');
+  if(el) el.innerHTML=`${days[d.getDay()]}<br>${months[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()}`;
+}
+
+setDate();
+buildExercises(day1Data,'day1-exercises','d1');
+buildExercises(day2Data,'day2-exercises','d2');
+buildExercises(day3Data,'day3-exercises','d3');
+buildExercises(day4Data,'day4-exercises','d4');
 buildGolfCircuit();
 buildProgress();
 </script>
