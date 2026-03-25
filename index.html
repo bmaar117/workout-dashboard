@@ -7,291 +7,121 @@
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --green: #3B6D11;
-    --green-light: #639922;
-    --green-pale: #EAF3DE;
-    --green-mid: #C0DD97;
-    --amber: #BA7517;
-    --amber-light: #EF9F27;
-    --amber-pale: #FAEEDA;
-    --blue: #185FA5;
-    --blue-pale: #E6F1FB;
-    --red: #A32D2D;
-    --red-pale: #FCEBEB;
-    --teal: #0F6E56;
-    --teal-pale: #E1F5EE;
-    --gray-bg: #F5F4F0;
-    --gray-card: #FFFFFF;
-    --gray-border: rgba(0,0,0,0.1);
-    --gray-text: #444441;
-    --gray-muted: #888780;
-    --text-dark: #2C2C2A;
-    --radius: 10px;
+    --green:#3B6D11;--green-light:#639922;--green-pale:#EAF3DE;--green-mid:#C0DD97;
+    --amber:#BA7517;--amber-light:#EF9F27;--amber-pale:#FAEEDA;
+    --blue:#185FA5;--blue-pale:#E6F1FB;
+    --red:#A32D2D;--red-pale:#FCEBEB;
+    --teal:#0F6E56;--teal-pale:#E1F5EE;
+    --gray-bg:#F5F4F0;--gray-card:#FFFFFF;
+    --gray-border:rgba(0,0,0,0.1);--gray-text:#444441;
+    --gray-muted:#888780;--text-dark:#2C2C2A;
+    --radius:10px;
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: 'Barlow', sans-serif;
-    background: var(--gray-bg);
-    color: var(--text-dark);
-    min-height: 100vh;
-  }
-
-  /* TOP HEADER */
-  .header {
-    background: var(--green);
-    color: #fff;
-    padding: 18px 24px 14px;
-    display: flex; align-items: center; justify-content: space-between;
-  }
-  .header-title {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 22px; font-weight: 700; letter-spacing: 0.5px;
-    line-height: 1;
-  }
-  .header-sub {
-    font-size: 12px; opacity: 0.75; margin-top: 3px;
-    font-weight: 400; letter-spacing: 0.3px;
-  }
-  .header-date {
-    font-size: 12px; opacity: 0.75; text-align: right;
-  }
-
-  /* NAV TABS */
-  .nav {
-    background: #fff;
-    border-bottom: 1px solid var(--gray-border);
-    display: flex;
-    overflow-x: auto;
-    scrollbar-width: none;
-  }
-  .nav::-webkit-scrollbar { display: none; }
-  .nav-btn {
-    flex-shrink: 0;
-    padding: 12px 18px;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 14px; font-weight: 600; letter-spacing: 0.4px;
-    border: none; background: none; cursor: pointer;
-    color: var(--gray-muted);
-    border-bottom: 3px solid transparent;
-    transition: all 0.15s;
-  }
-  .nav-btn:hover { color: var(--text-dark); }
-  .nav-btn.active { color: var(--green); border-bottom-color: var(--green); }
-  .nav-btn .day-label { font-size: 10px; display: block; font-weight: 400; opacity: 0.7; margin-top: 1px; }
-
-  /* PAGES */
-  .page { display: none; padding: 16px; max-width: 860px; margin: 0 auto; }
-  .page.active { display: block; }
-
-  /* SECTION HEADING */
-  .section-title {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 20px; font-weight: 700; letter-spacing: 0.5px;
-    margin-bottom: 4px;
-  }
-  .section-sub { font-size: 13px; color: var(--gray-muted); margin-bottom: 16px; }
-
-  /* WARMUP BANNER */
-  .warmup-banner {
-    background: var(--amber-pale);
-    border-left: 3px solid var(--amber-light);
-    border-radius: var(--radius);
-    padding: 10px 14px;
-    margin-bottom: 16px;
-    font-size: 13px; color: var(--amber);
-  }
-  .warmup-banner strong { font-weight: 600; display: block; margin-bottom: 4px; font-size: 13px; }
-
-  /* EXERCISE CARD */
-  .exercise-card {
-    background: var(--gray-card);
-    border: 1px solid var(--gray-border);
-    border-radius: var(--radius);
-    margin-bottom: 12px;
-    overflow: hidden;
-  }
-  .exercise-header {
-    display: flex; align-items: center;
-    padding: 12px 14px; cursor: pointer;
-    gap: 12px; user-select: none;
-  }
-  .exercise-num {
-    width: 28px; height: 28px; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 13px; font-weight: 700; flex-shrink: 0;
-  }
-  .exercise-name {
-    flex: 1;
-    font-weight: 600; font-size: 15px;
-  }
-  .exercise-meta {
-    font-size: 12px; color: var(--gray-muted);
-    margin-top: 2px; font-weight: 400;
-  }
-  .exercise-badge {
-    font-size: 11px; font-weight: 600; padding: 3px 8px;
-    border-radius: 20px; flex-shrink: 0;
-  }
-  .badge-ares { background: var(--teal-pale); color: var(--teal); }
-  .badge-rack { background: var(--blue-pale); color: var(--blue); }
-  .badge-db   { background: var(--amber-pale); color: var(--amber); }
-  .badge-bw   { background: #F1EFE8; color: #5F5E5A; }
-  .badge-golf { background: var(--green-pale); color: var(--green); }
-
-  .chevron { font-size: 12px; color: var(--gray-muted); flex-shrink: 0; transition: transform 0.2s; }
-  .exercise-card.open .chevron { transform: rotate(180deg); }
-
-  /* EXERCISE BODY */
-  .exercise-body {
-    display: none;
-    border-top: 1px solid var(--gray-border);
-    padding: 14px;
-  }
-  .exercise-card.open .exercise-body { display: block; }
-
-  .instructions { font-size: 13px; color: var(--gray-text); margin-bottom: 12px; line-height: 1.6; }
-  .instructions li { margin-left: 16px; margin-bottom: 3px; }
-  .tip-row { font-size: 12px; color: var(--gray-muted); font-style: italic; margin-bottom: 12px; }
-
-  /* SET TRACKER */
-  .set-tracker-title {
-    font-size: 12px; font-weight: 600; color: var(--gray-muted);
-    text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;
-  }
-  .sets-grid {
-    display: grid; gap: 6px;
-  }
-  .set-row {
-    display: flex; align-items: center; gap: 8px;
-    background: var(--gray-bg);
-    border-radius: 8px; padding: 8px 10px;
-  }
-  .set-check {
-    width: 20px; height: 20px; border-radius: 4px;
-    border: 1.5px solid var(--gray-border);
-    cursor: pointer; display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0; font-size: 12px; transition: all 0.15s;
-    background: #fff;
-  }
-  .set-check.done { background: var(--green-light); border-color: var(--green-light); color: #fff; }
-  .set-label { font-size: 13px; font-weight: 600; min-width: 42px; }
-  .set-input {
-    width: 58px; padding: 4px 6px; border: 1px solid var(--gray-border);
-    border-radius: 6px; font-size: 13px; text-align: center;
-    background: #fff; color: var(--text-dark); font-family: 'Barlow', sans-serif;
-  }
-  .set-x { font-size: 12px; color: var(--gray-muted); }
-  .set-reps {
-    width: 52px; padding: 4px 6px; border: 1px solid var(--gray-border);
-    border-radius: 6px; font-size: 13px; text-align: center;
-    background: #fff; color: var(--text-dark); font-family: 'Barlow', sans-serif;
-  }
-  .set-target { font-size: 12px; color: var(--gray-muted); flex: 1; text-align: right; }
-
-  /* PROGRESS BAR */
-  .progress-row {
-    display: flex; align-items: center; gap: 8px; margin-top: 10px;
-  }
-  .progress-bar-bg {
-    flex: 1; height: 5px; background: #E8E6E0; border-radius: 3px; overflow: hidden;
-  }
-  .progress-bar-fill { height: 100%; background: var(--green-light); border-radius: 3px; transition: width 0.3s; }
-  .progress-pct { font-size: 12px; color: var(--gray-muted); min-width: 28px; text-align: right; }
-
-  /* SUMMARY STRIP */
-  .day-summary {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
-    margin-bottom: 18px;
-  }
-  .summary-card {
-    background: #fff; border: 1px solid var(--gray-border);
-    border-radius: var(--radius); padding: 12px 14px; text-align: center;
-  }
-  .summary-val {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 26px; font-weight: 700; line-height: 1;
-  }
-  .summary-lbl { font-size: 11px; color: var(--gray-muted); margin-top: 3px; }
-
-  /* WEEKLY SCHEDULE */
-  .week-grid {
-    display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin-bottom: 18px;
-  }
-  .week-day {
-    background: #fff; border: 1px solid var(--gray-border);
-    border-radius: 8px; padding: 8px 6px; text-align: center;
-  }
-  .week-day-name { font-size: 10px; color: var(--gray-muted); font-weight: 600; text-transform: uppercase; }
-  .week-day-tag {
-    font-size: 9px; font-weight: 600; margin-top: 4px;
-    padding: 2px 4px; border-radius: 4px; line-height: 1.3;
-  }
-  .week-day.rest .week-day-tag { background: #F1EFE8; color: #888780; }
-  .week-day.push .week-day-tag { background: var(--blue-pale); color: var(--blue); }
-  .week-day.legs .week-day-tag { background: var(--red-pale); color: var(--red); }
-  .week-day.pull .week-day-tag { background: var(--teal-pale); color: var(--teal); }
-  .week-day.full .week-day-tag { background: var(--green-pale); color: var(--green); }
-  .week-day.bike .week-day-tag { background: var(--amber-pale); color: var(--amber); }
-
-  /* GOLF PAGE */
-  .golf-card {
-    background: var(--gray-card); border: 1px solid var(--gray-border);
-    border-radius: var(--radius); padding: 14px; margin-bottom: 12px;
-  }
-  .golf-card-title {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 16px; font-weight: 700; margin-bottom: 8px;
-    display: flex; align-items: center; gap: 8px;
-  }
-  .golf-icon {
-    width: 24px; height: 24px; background: var(--green-pale);
-    border-radius: 50%; display: flex; align-items: center; justify-content: center;
-    font-size: 13px;
-  }
-
-  /* PROGRESS PAGE */
-  .progress-section { margin-bottom: 20px; }
-  .lift-row {
-    background: #fff; border: 1px solid var(--gray-border);
-    border-radius: var(--radius); padding: 12px 14px;
-    display: flex; align-items: center; justify-content: space-between;
-    margin-bottom: 8px; flex-wrap: wrap; gap: 8px;
-  }
-  .lift-name { font-weight: 600; font-size: 14px; }
-  .lift-details { font-size: 12px; color: var(--gray-muted); }
-  .lift-controls { display: flex; align-items: center; gap: 6px; }
-  .lift-weight-input {
-    width: 70px; padding: 5px 8px; border: 1px solid var(--gray-border);
-    border-radius: 6px; font-size: 13px; text-align: center; font-family: 'Barlow', sans-serif;
-    background: var(--gray-bg);
-  }
-  .save-btn {
-    padding: 5px 12px; background: var(--green);
-    color: #fff; border: none; border-radius: 6px;
-    font-size: 12px; font-weight: 600; cursor: pointer; font-family: 'Barlow', sans-serif;
-  }
-  .save-btn:hover { background: var(--green-light); }
-
-  /* BACK PROTECTION */
-  .back-card {
-    background: var(--red-pale); border-left: 3px solid #E24B4A;
-    border-radius: var(--radius); padding: 12px 14px; margin-bottom: 16px;
-  }
-  .back-card-title { font-weight: 600; font-size: 14px; color: var(--red); margin-bottom: 8px; }
-
-  /* FOOTER */
-  .footer-note {
-    text-align: center; font-size: 11px; color: var(--gray-muted);
-    padding: 20px 16px; border-top: 1px solid var(--gray-border);
-    margin-top: 8px;
-  }
-
-  @media (max-width: 480px) {
-    .week-grid { grid-template-columns: repeat(4, 1fr); }
-    .day-summary { grid-template-columns: repeat(3, 1fr); }
-    .exercise-name { font-size: 14px; }
-  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Barlow',sans-serif;background:var(--gray-bg);color:var(--text-dark);min-height:100vh;}
+  .header{background:var(--green);color:#fff;padding:16px 20px 12px;display:flex;align-items:center;justify-content:space-between;}
+  .header-title{font-family:'Barlow Condensed',sans-serif;font-size:21px;font-weight:700;letter-spacing:0.5px;line-height:1;}
+  .header-sub{font-size:11px;opacity:0.75;margin-top:3px;}
+  .header-right{text-align:right;}
+  .header-date{font-size:12px;opacity:0.85;font-weight:600;}
+  .header-save{font-size:10px;opacity:0.65;margin-top:2px;}
+  .nav{background:#fff;border-bottom:1px solid var(--gray-border);display:flex;overflow-x:auto;scrollbar-width:none;}
+  .nav::-webkit-scrollbar{display:none;}
+  .nav-btn{flex-shrink:0;padding:11px 15px;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.4px;border:none;background:none;cursor:pointer;color:var(--gray-muted);border-bottom:3px solid transparent;transition:all 0.15s;}
+  .nav-btn:hover{color:var(--text-dark);}
+  .nav-btn.active{color:var(--green);border-bottom-color:var(--green);}
+  .nav-btn .day-label{font-size:9px;display:block;font-weight:400;opacity:0.7;margin-top:1px;}
+  .page{display:none;padding:14px;max-width:860px;margin:0 auto;}
+  .page.active{display:block;}
+  .section-title{font-family:'Barlow Condensed',sans-serif;font-size:19px;font-weight:700;letter-spacing:0.5px;margin-bottom:3px;}
+  .section-sub{font-size:12px;color:var(--gray-muted);margin-bottom:14px;}
+  .date-bar{background:#fff;border:1px solid var(--gray-border);border-radius:var(--radius);padding:10px 14px;margin-bottom:14px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;}
+  .date-bar-label{font-size:11px;color:var(--gray-muted);font-weight:600;text-transform:uppercase;letter-spacing:0.4px;}
+  .date-controls{display:flex;align-items:center;gap:7px;}
+  .date-nav-btn{width:28px;height:28px;border:1px solid var(--gray-border);border-radius:6px;background:#fff;cursor:pointer;font-size:13px;display:flex;align-items:center;justify-content:center;color:var(--gray-text);}
+  .date-nav-btn:hover{background:var(--gray-bg);}
+  .date-display{font-size:13px;font-weight:600;min-width:130px;text-align:center;}
+  .today-btn{padding:4px 10px;font-size:11px;font-weight:600;background:var(--green-pale);color:var(--green);border:1px solid var(--green-mid);border-radius:6px;cursor:pointer;font-family:'Barlow',sans-serif;}
+  .past-badge{display:inline-block;background:var(--amber-pale);border:1px solid #FAC775;border-radius:6px;padding:2px 7px;font-size:10px;color:var(--amber);font-weight:600;}
+  .warmup-banner{background:var(--amber-pale);border-left:3px solid var(--amber-light);border-radius:var(--radius);padding:10px 14px;margin-bottom:14px;font-size:13px;color:var(--amber);}
+  .warmup-banner strong{font-weight:600;display:block;margin-bottom:3px;font-size:13px;}
+  .exercise-card{background:var(--gray-card);border:1px solid var(--gray-border);border-radius:var(--radius);margin-bottom:10px;overflow:hidden;}
+  .exercise-header{display:flex;align-items:center;padding:11px 13px;cursor:pointer;gap:10px;user-select:none;}
+  .exercise-num{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;flex-shrink:0;}
+  .exercise-name{flex:1;font-weight:600;font-size:14px;}
+  .exercise-meta{font-size:11px;color:var(--gray-muted);margin-top:1px;font-weight:400;}
+  .exercise-badge{font-size:10px;font-weight:600;padding:2px 7px;border-radius:20px;flex-shrink:0;}
+  .badge-ares{background:var(--teal-pale);color:var(--teal);}
+  .badge-rack{background:var(--blue-pale);color:var(--blue);}
+  .badge-db{background:var(--amber-pale);color:var(--amber);}
+  .badge-bw{background:#F1EFE8;color:#5F5E5A;}
+  .chevron{font-size:11px;color:var(--gray-muted);flex-shrink:0;transition:transform 0.2s;}
+  .exercise-card.open .chevron{transform:rotate(180deg);}
+  .exercise-body{display:none;border-top:1px solid var(--gray-border);padding:13px;}
+  .exercise-card.open .exercise-body{display:block;}
+  .instructions{font-size:13px;color:var(--gray-text);margin-bottom:10px;line-height:1.6;}
+  .tip-row{font-size:12px;color:var(--gray-muted);font-style:italic;margin-bottom:10px;}
+  .set-tracker-title{font-size:11px;font-weight:600;color:var(--gray-muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:7px;}
+  .sets-grid{display:grid;gap:5px;}
+  .set-row{display:flex;align-items:center;gap:7px;background:var(--gray-bg);border-radius:8px;padding:7px 9px;}
+  .set-check{width:20px;height:20px;border-radius:4px;border:1.5px solid var(--gray-border);cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:11px;transition:all 0.15s;background:#fff;}
+  .set-check.done{background:var(--green-light);border-color:var(--green-light);color:#fff;}
+  .set-label{font-size:12px;font-weight:600;min-width:36px;}
+  .set-input{width:55px;padding:4px 5px;border:1px solid var(--gray-border);border-radius:6px;font-size:12px;text-align:center;background:#fff;color:var(--text-dark);font-family:'Barlow',sans-serif;}
+  .set-x{font-size:11px;color:var(--gray-muted);}
+  .set-reps{width:48px;padding:4px 5px;border:1px solid var(--gray-border);border-radius:6px;font-size:12px;text-align:center;background:#fff;color:var(--text-dark);font-family:'Barlow',sans-serif;}
+  .set-target{font-size:11px;color:var(--gray-muted);flex:1;text-align:right;}
+  .progress-row{display:flex;align-items:center;gap:8px;margin-top:8px;}
+  .progress-bar-bg{flex:1;height:5px;background:#E8E6E0;border-radius:3px;overflow:hidden;}
+  .progress-bar-fill{height:100%;background:var(--green-light);border-radius:3px;transition:width 0.3s;}
+  .progress-pct{font-size:11px;color:var(--gray-muted);min-width:26px;text-align:right;}
+  .day-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:14px;}
+  .summary-card{background:#fff;border:1px solid var(--gray-border);border-radius:var(--radius);padding:11px 13px;text-align:center;}
+  .summary-val{font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:700;line-height:1;}
+  .summary-lbl{font-size:10px;color:var(--gray-muted);margin-top:3px;}
+  .history-month-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
+  .month-title{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;}
+  .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:4px;}
+  .cal-header{font-size:10px;font-weight:600;color:var(--gray-muted);text-align:center;padding:4px 0;text-transform:uppercase;}
+  .cal-day{min-height:44px;background:#fff;border:1px solid var(--gray-border);border-radius:8px;padding:4px 3px;cursor:default;position:relative;}
+  .cal-day.has-workout{cursor:pointer;border-color:var(--green-mid);}
+  .cal-day.has-workout:hover{background:var(--green-pale);}
+  .cal-day.today{border-color:var(--green);border-width:2px;}
+  .cal-day.empty{background:transparent;border-color:transparent;}
+  .cal-day-num{font-size:11px;font-weight:600;color:var(--gray-muted);text-align:center;}
+  .cal-day.has-workout .cal-day-num{color:var(--text-dark);}
+  .cal-day.today .cal-day-num{color:var(--green);}
+  .cal-workout-dot{font-size:8px;font-weight:700;padding:1px 3px;border-radius:3px;margin-top:2px;display:block;text-align:center;line-height:1.4;}
+  .history-entry{background:#fff;border:1px solid var(--gray-border);border-radius:var(--radius);padding:13px;margin-bottom:10px;}
+  .history-entry-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;flex-wrap:wrap;gap:6px;}
+  .history-date-label{font-weight:600;font-size:14px;}
+  .history-day-badge{font-size:11px;font-weight:600;padding:3px 9px;border-radius:20px;}
+  .history-sets{display:grid;gap:4px;}
+  .history-set-row{display:flex;align-items:center;gap:8px;font-size:12px;padding:5px 8px;background:var(--gray-bg);border-radius:6px;}
+  .history-set-done{width:16px;height:16px;border-radius:3px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:10px;}
+  .week-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin-bottom:14px;}
+  .week-day{background:#fff;border:1px solid var(--gray-border);border-radius:8px;padding:7px 5px;text-align:center;}
+  .week-day-name{font-size:9px;color:var(--gray-muted);font-weight:600;text-transform:uppercase;}
+  .week-day-tag{font-size:9px;font-weight:600;margin-top:3px;padding:2px 3px;border-radius:4px;line-height:1.3;}
+  .week-day.rest .week-day-tag{background:#F1EFE8;color:#888780;}
+  .week-day.push .week-day-tag{background:var(--blue-pale);color:var(--blue);}
+  .week-day.legs .week-day-tag{background:var(--red-pale);color:var(--red);}
+  .week-day.pull .week-day-tag{background:var(--teal-pale);color:var(--teal);}
+  .week-day.full .week-day-tag{background:var(--green-pale);color:var(--green);}
+  .week-day.bike .week-day-tag{background:var(--amber-pale);color:var(--amber);}
+  .lift-row{background:#fff;border:1px solid var(--gray-border);border-radius:var(--radius);padding:11px 13px;display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;flex-wrap:wrap;gap:8px;}
+  .lift-name{font-weight:600;font-size:13px;}
+  .lift-details{font-size:11px;color:var(--gray-muted);}
+  .lift-controls{display:flex;align-items:center;gap:6px;}
+  .lift-weight-input{width:66px;padding:5px 7px;border:1px solid var(--gray-border);border-radius:6px;font-size:12px;text-align:center;font-family:'Barlow',sans-serif;background:var(--gray-bg);}
+  .save-btn{padding:5px 11px;background:var(--green);color:#fff;border:none;border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;font-family:'Barlow',sans-serif;}
+  .save-btn:hover{background:var(--green-light);}
+  .golf-card{background:var(--gray-card);border:1px solid var(--gray-border);border-radius:var(--radius);padding:13px;margin-bottom:10px;}
+  .golf-card-title{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:700;margin-bottom:7px;}
+  .back-card{background:var(--red-pale);border-left:3px solid #E24B4A;border-radius:var(--radius);padding:11px 13px;margin-bottom:14px;}
+  .back-card-title{font-weight:600;font-size:13px;color:var(--red);margin-bottom:6px;}
+  .footer-note{text-align:center;font-size:11px;color:var(--gray-muted);padding:18px 16px;border-top:1px solid var(--gray-border);margin-top:8px;}
+  @media(max-width:480px){.week-grid{grid-template-columns:repeat(4,1fr);}.cal-grid{gap:3px;}.exercise-name{font-size:13px;}}
 </style>
 </head>
 <body>
@@ -299,641 +129,393 @@
 <div class="header">
   <div>
     <div class="header-title">REP PR-5000 + ARES 2.0</div>
-    <div class="header-sub">Your Personal Training Dashboard</div>
+    <div class="header-sub">Personal Training Dashboard</div>
   </div>
-  <div class="header-date" id="today-date"></div>
+  <div class="header-right">
+    <div class="header-date" id="today-date"></div>
+    <div class="header-save" id="save-indicator">All changes saved automatically</div>
+  </div>
 </div>
 
-<!-- NAV -->
 <div class="nav">
-  <button class="nav-btn active" onclick="showPage('schedule')">
-    SCHEDULE<span class="day-label">Weekly</span>
-  </button>
-  <button class="nav-btn" onclick="showPage('day1')">
-    DAY 1<span class="day-label">Upper Push</span>
-  </button>
-  <button class="nav-btn" onclick="showPage('day2')">
-    DAY 2<span class="day-label">Legs</span>
-  </button>
-  <button class="nav-btn" onclick="showPage('day3')">
-    DAY 3<span class="day-label">Upper Pull</span>
-  </button>
-  <button class="nav-btn" onclick="showPage('day4')">
-    DAY 4<span class="day-label">Full Body</span>
-  </button>
-  <button class="nav-btn" onclick="showPage('golf')">
-    GOLF<span class="day-label">Performance</span>
-  </button>
-  <button class="nav-btn" onclick="showPage('progress')">
-    PROGRESS<span class="day-label">Tracking</span>
-  </button>
+  <button class="nav-btn active" onclick="showPage('schedule')">SCHEDULE<span class="day-label">Weekly</span></button>
+  <button class="nav-btn" onclick="showPage('day1')">DAY 1<span class="day-label">Push</span></button>
+  <button class="nav-btn" onclick="showPage('day2')">DAY 2<span class="day-label">Legs</span></button>
+  <button class="nav-btn" onclick="showPage('day3')">DAY 3<span class="day-label">Pull</span></button>
+  <button class="nav-btn" onclick="showPage('day4')">DAY 4<span class="day-label">Full Body</span></button>
+  <button class="nav-btn" onclick="showPage('golf')">GOLF<span class="day-label">Performance</span></button>
+  <button class="nav-btn" onclick="showPage('progress')">PROGRESS<span class="day-label">Tracking</span></button>
+  <button class="nav-btn" onclick="showPage('history')">HISTORY<span class="day-label">Calendar</span></button>
 </div>
 
-<!-- ======= SCHEDULE PAGE ======= -->
+<!-- SCHEDULE -->
 <div class="page active" id="page-schedule">
-  <div style="padding-top:4px;">
-    <div class="section-title">Weekly Schedule</div>
-    <div class="section-sub">Option A layout — adjust to fit your week</div>
-
-    <div class="week-grid">
-      <div class="week-day push">
-        <div class="week-day-name">Mon</div>
-        <div class="week-day-tag">PUSH</div>
-      </div>
-      <div class="week-day legs">
-        <div class="week-day-name">Tue</div>
-        <div class="week-day-tag">LEGS</div>
-      </div>
-      <div class="week-day bike">
-        <div class="week-day-name">Wed</div>
-        <div class="week-day-tag">BIKE</div>
-      </div>
-      <div class="week-day pull">
-        <div class="week-day-name">Thu</div>
-        <div class="week-day-tag">PULL</div>
-      </div>
-      <div class="week-day rest">
-        <div class="week-day-name">Fri</div>
-        <div class="week-day-tag">REST</div>
-      </div>
-      <div class="week-day full">
-        <div class="week-day-name">Sat</div>
-        <div class="week-day-tag">FULL</div>
-      </div>
-      <div class="week-day bike">
-        <div class="week-day-name">Sun</div>
-        <div class="week-day-tag">BIKE</div>
-      </div>
-    </div>
-
-    <!-- Overview cards -->
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px;">
-      <div class="summary-card" style="text-align:left;">
-        <div style="font-weight:600; font-size:14px; margin-bottom:8px; color:var(--green);">Cardio</div>
-        <div style="font-size:13px; color:var(--gray-text); line-height:1.7;">
-          Stationary bike<br>10–12 miles/session<br>5× per week
-        </div>
-      </div>
-      <div class="summary-card" style="text-align:left;">
-        <div style="font-weight:600; font-size:14px; margin-bottom:8px; color:var(--blue);">Your Goals</div>
-        <div style="font-size:13px; color:var(--gray-text); line-height:1.7;">
-          Fat loss + muscle<br>Golf performance<br>Long-term health
-        </div>
-      </div>
-    </div>
-
-    <!-- Deload notice -->
-    <div style="background:var(--teal-pale); border-left:3px solid var(--teal); border-radius:var(--radius); padding:10px 14px; font-size:13px; color:var(--teal); margin-bottom:16px;">
-      <strong style="display:block; font-weight:600; font-size:13px; margin-bottom:3px;">Deload every 6–8 weeks</strong>
-      Use 70% of your normal weight for one full week to let your body recover and grow stronger.
-    </div>
-
-    <!-- Nutrition -->
-    <div class="section-title" style="font-size:17px; margin-bottom:4px;">Daily Nutrition Targets</div>
-    <div class="section-sub">Fat loss + muscle gain at 61</div>
-    <div style="display:grid; grid-template-columns: repeat(3,1fr); gap:10px; margin-bottom:16px;">
-      <div class="summary-card">
-        <div class="summary-val" style="color:var(--green);">130g</div>
-        <div class="summary-lbl">Protein</div>
-      </div>
-      <div class="summary-card">
-        <div class="summary-val" style="color:var(--amber);">~350</div>
-        <div class="summary-lbl">Cal deficit</div>
-      </div>
-      <div class="summary-card">
-        <div class="summary-val" style="color:var(--blue);">90oz</div>
-        <div class="summary-lbl">Water</div>
-      </div>
-    </div>
-
-    <!-- Realistic targets -->
-    <div class="section-title" style="font-size:17px; margin-bottom:4px;">Realistic 3-Month Targets</div>
-    <div class="section-sub">Based on age 61, 5'6", 170 lbs</div>
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
-      <div class="summary-card" style="text-align:left;">
-        <div style="font-size:12px; color:var(--gray-muted); margin-bottom:6px;">BODY WEIGHT</div>
-        <div style="font-weight:600; font-size:15px;">165–168 lbs</div>
-        <div style="font-size:12px; color:var(--gray-muted);">Waist: 30–31"</div>
-      </div>
-      <div class="summary-card" style="text-align:left;">
-        <div style="font-size:12px; color:var(--gray-muted); margin-bottom:6px;">DEADLIFT GOAL</div>
-        <div style="font-weight:600; font-size:15px;">155–175 lbs</div>
-        <div style="font-size:12px; color:var(--gray-muted);">From 100 lbs start</div>
-      </div>
-    </div>
+  <div class="section-title">Weekly Schedule</div>
+  <div class="section-sub">Recommended layout — adjust to fit your week</div>
+  <div class="week-grid">
+    <div class="week-day push"><div class="week-day-name">Mon</div><div class="week-day-tag">PUSH</div></div>
+    <div class="week-day legs"><div class="week-day-name">Tue</div><div class="week-day-tag">LEGS</div></div>
+    <div class="week-day bike"><div class="week-day-name">Wed</div><div class="week-day-tag">BIKE</div></div>
+    <div class="week-day pull"><div class="week-day-name">Thu</div><div class="week-day-tag">PULL</div></div>
+    <div class="week-day rest"><div class="week-day-name">Fri</div><div class="week-day-tag">REST</div></div>
+    <div class="week-day full"><div class="week-day-name">Sat</div><div class="week-day-tag">FULL</div></div>
+    <div class="week-day bike"><div class="week-day-name">Sun</div><div class="week-day-tag">BIKE</div></div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;">
+    <div class="summary-card" style="text-align:left;"><div style="font-weight:600;font-size:13px;margin-bottom:6px;color:var(--green);">Cardio</div><div style="font-size:12px;color:var(--gray-text);line-height:1.7;">Stationary bike<br>10–12 miles/session<br>5× per week</div></div>
+    <div class="summary-card" style="text-align:left;"><div style="font-weight:600;font-size:13px;margin-bottom:6px;color:var(--blue);">Your Goals</div><div style="font-size:12px;color:var(--gray-text);line-height:1.7;">Fat loss + muscle<br>Golf performance<br>Long-term health</div></div>
+  </div>
+  <div style="background:var(--teal-pale);border-left:3px solid var(--teal);border-radius:var(--radius);padding:10px 13px;font-size:12px;color:var(--teal);margin-bottom:14px;">
+    <strong style="display:block;font-weight:600;font-size:12px;margin-bottom:3px;">Deload every 6–8 weeks</strong>
+    Use 70% of your normal weight for one full week to recover and grow stronger.
+  </div>
+  <div class="section-title" style="font-size:16px;margin-bottom:3px;">Daily Nutrition Targets</div>
+  <div class="section-sub">Fat loss + muscle gain at 61</div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:14px;">
+    <div class="summary-card"><div class="summary-val" style="color:var(--green);">130g</div><div class="summary-lbl">Protein</div></div>
+    <div class="summary-card"><div class="summary-val" style="color:var(--amber);">~350</div><div class="summary-lbl">Cal deficit</div></div>
+    <div class="summary-card"><div class="summary-val" style="color:var(--blue);">90oz</div><div class="summary-lbl">Water</div></div>
+  </div>
+  <div class="section-title" style="font-size:16px;margin-bottom:3px;">3-Month Targets</div>
+  <div class="section-sub">Based on age 61, 5'6", 170 lbs</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:9px;">
+    <div class="summary-card" style="text-align:left;"><div style="font-size:10px;color:var(--gray-muted);margin-bottom:4px;">BODY WEIGHT</div><div style="font-weight:600;font-size:14px;">165–168 lbs</div><div style="font-size:11px;color:var(--gray-muted);">Waist: 30–31"</div></div>
+    <div class="summary-card" style="text-align:left;"><div style="font-size:10px;color:var(--gray-muted);margin-bottom:4px;">DEADLIFT GOAL</div><div style="font-weight:600;font-size:14px;">155–175 lbs</div><div style="font-size:11px;color:var(--gray-muted);">From 100 lbs start</div></div>
   </div>
 </div>
 
-<!-- ======= DAY 1 ======= -->
+<!-- DAY 1 -->
 <div class="page" id="page-day1">
   <div class="section-title">Day 1 — Upper Push</div>
   <div class="section-sub">Chest · Shoulders · Triceps · ~55 min</div>
-
+  <div id="dateBar-day1"></div>
   <div class="day-summary">
-    <div class="summary-card">
-      <div class="summary-val" id="d1-sets">21</div>
-      <div class="summary-lbl">Total sets</div>
-    </div>
-    <div class="summary-card">
-      <div class="summary-val" id="d1-done">0</div>
-      <div class="summary-lbl">Sets done</div>
-    </div>
-    <div class="summary-card">
-      <div class="summary-val">55</div>
-      <div class="summary-lbl">Min target</div>
-    </div>
+    <div class="summary-card"><div class="summary-val" id="d1-total">0</div><div class="summary-lbl">Total sets</div></div>
+    <div class="summary-card"><div class="summary-val" id="d1-done">0</div><div class="summary-lbl">Sets done</div></div>
+    <div class="summary-card"><div class="summary-val">55</div><div class="summary-lbl">Min target</div></div>
   </div>
-
-  <div class="warmup-banner">
-    <strong>Warmup (5 min)</strong>
-    Arm circles 30 sec · Band pull-aparts 15 reps · 1–2 light bench sets at 50%
-  </div>
-
-  <div class="back-card" style="background:var(--green-pale); border-left-color:var(--green-light);">
-    <div class="back-card-title" style="color:var(--green);">Golf Tip for Push Day</div>
-    <div style="font-size:13px; color:var(--gray-text);">Overhead press and lateral raises build the shoulder stability that powers a consistent golf swing. Focus on controlled movement.</div>
-  </div>
-
-  <!-- Exercises Day 1 -->
+  <div class="warmup-banner"><strong>Warmup (5 min)</strong>Arm circles 30 sec · Band pull-aparts 15 reps · 1–2 light bench sets at 50%</div>
   <div id="day1-exercises"></div>
 </div>
 
-<!-- ======= DAY 2 ======= -->
+<!-- DAY 2 -->
 <div class="page" id="page-day2">
   <div class="section-title">Day 2 — Lower Body</div>
   <div class="section-sub">Legs · Glutes · Hamstrings · ~55–60 min</div>
-
+  <div id="dateBar-day2"></div>
   <div class="day-summary">
-    <div class="summary-card">
-      <div class="summary-val">20</div>
-      <div class="summary-lbl">Total sets</div>
-    </div>
-    <div class="summary-card">
-      <div class="summary-val" id="d2-done">0</div>
-      <div class="summary-lbl">Sets done</div>
-    </div>
-    <div class="summary-card">
-      <div class="summary-val">60</div>
-      <div class="summary-lbl">Min target</div>
-    </div>
+    <div class="summary-card"><div class="summary-val" id="d2-total">0</div><div class="summary-lbl">Total sets</div></div>
+    <div class="summary-card"><div class="summary-val" id="d2-done">0</div><div class="summary-lbl">Sets done</div></div>
+    <div class="summary-card"><div class="summary-val">60</div><div class="summary-lbl">Min target</div></div>
   </div>
-
-  <div class="warmup-banner" style="background:var(--red-pale); border-left-color:#E24B4A;">
-    <strong style="color:var(--red);">Back Protection — Do First (5 min)</strong>
-    Bird Dog 2×8 each side · Dead Bug 2×10 · Pallof Press 2×10 each side
-  </div>
-
-  <div class="back-card">
-    <div class="back-card-title">Back Safety — Important for You</div>
-    <div style="font-size:13px; color:var(--gray-text);">Keep a flat back on squats and RDLs. If lower back tightens, stop and rest. Back health comes before weight.</div>
-  </div>
-
+  <div class="warmup-banner" style="background:var(--red-pale);border-left-color:#E24B4A;"><strong style="color:var(--red);">Back Protection — Do First (5 min)</strong>Bird Dog 2×8 each side · Dead Bug 2×10 · Pallof Press 2×10 each side</div>
+  <div class="back-card"><div class="back-card-title">Back Safety</div><div style="font-size:12px;color:var(--gray-text);">Keep flat back on squats and RDLs. If lower back tightens, stop and rest. Back health before weight.</div></div>
   <div id="day2-exercises"></div>
 </div>
 
-<!-- ======= DAY 3 ======= -->
+<!-- DAY 3 -->
 <div class="page" id="page-day3">
   <div class="section-title">Day 3 — Upper Pull</div>
   <div class="section-sub">Back · Biceps · Posture · ~50–55 min</div>
-
+  <div id="dateBar-day3"></div>
   <div class="day-summary">
-    <div class="summary-card">
-      <div class="summary-val">18</div>
-      <div class="summary-lbl">Total sets</div>
-    </div>
-    <div class="summary-card">
-      <div class="summary-val" id="d3-done">0</div>
-      <div class="summary-lbl">Sets done</div>
-    </div>
-    <div class="summary-card">
-      <div class="summary-val">55</div>
-      <div class="summary-lbl">Min target</div>
-    </div>
+    <div class="summary-card"><div class="summary-val" id="d3-total">0</div><div class="summary-lbl">Total sets</div></div>
+    <div class="summary-card"><div class="summary-val" id="d3-done">0</div><div class="summary-lbl">Sets done</div></div>
+    <div class="summary-card"><div class="summary-val">55</div><div class="summary-lbl">Min target</div></div>
   </div>
-
-  <div class="warmup-banner">
-    <strong>Warmup (5 min)</strong>
-    Band pull-aparts 15 reps · Shoulder circles · Light lat pulldown 1 set
-  </div>
-
-  <div class="golf-card" style="background:var(--green-pale); border:1px solid var(--green-mid); margin-bottom:12px;">
-    <div class="golf-card-title" style="color:var(--green);">Golf Power Note</div>
-    <div style="font-size:13px; color:var(--gray-text);">Pull day builds the muscles that control your downswing and follow-through. Face pulls are especially important — they prevent shoulder injuries and improve swing rotation.</div>
-  </div>
-
+  <div class="warmup-banner"><strong>Warmup (5 min)</strong>Band pull-aparts 15 reps · Shoulder circles · Light lat pulldown 1 set</div>
+  <div class="golf-card" style="background:var(--green-pale);border:1px solid var(--green-mid);margin-bottom:12px;"><div class="golf-card-title" style="color:var(--green);">Golf Power Note</div><div style="font-size:12px;color:var(--gray-text);">Face pulls are critical — they prevent shoulder injuries and improve swing rotation. Never skip them.</div></div>
   <div id="day3-exercises"></div>
 </div>
 
-<!-- ======= DAY 4 ======= -->
+<!-- DAY 4 -->
 <div class="page" id="page-day4">
   <div class="section-title">Day 4 — Full Body + Core</div>
   <div class="section-sub">Strength · Stability · Golf Power · ~50 min</div>
-
+  <div id="dateBar-day4"></div>
   <div class="day-summary">
-    <div class="summary-card">
-      <div class="summary-val">19</div>
-      <div class="summary-lbl">Total sets</div>
-    </div>
-    <div class="summary-card">
-      <div class="summary-val" id="d4-done">0</div>
-      <div class="summary-lbl">Sets done</div>
-    </div>
-    <div class="summary-card">
-      <div class="summary-val">50</div>
-      <div class="summary-lbl">Min target</div>
-    </div>
+    <div class="summary-card"><div class="summary-val" id="d4-total">0</div><div class="summary-lbl">Total sets</div></div>
+    <div class="summary-card"><div class="summary-val" id="d4-done">0</div><div class="summary-lbl">Sets done</div></div>
+    <div class="summary-card"><div class="summary-val">50</div><div class="summary-lbl">Min target</div></div>
   </div>
-
-  <div class="warmup-banner" style="background:var(--red-pale); border-left-color:#E24B4A;">
-    <strong style="color:var(--red);">Back Protection — Do First (5 min)</strong>
-    Bird Dog 2×8 · Dead Bug 2×10 · Hip hinge warm-up with empty bar
-  </div>
-
+  <div class="warmup-banner" style="background:var(--red-pale);border-left-color:#E24B4A;"><strong style="color:var(--red);">Back Protection — Do First (5 min)</strong>Bird Dog 2×8 · Dead Bug 2×10 · Hip hinge warm-up with empty bar</div>
   <div id="day4-exercises"></div>
 </div>
 
-<!-- ======= GOLF PAGE ======= -->
+<!-- GOLF -->
 <div class="page" id="page-golf">
   <div class="section-title">Golf Performance</div>
-  <div class="section-sub">Drills and mobility for a stronger, more consistent swing</div>
-
-  <div class="golf-card" style="background:var(--green-pale); border:1px solid var(--green-mid);">
-    <div class="golf-card-title" style="color:var(--green);">
-      <div class="golf-icon">⛳</div>Golf Mobility Circuit
-    </div>
-    <div style="font-size:12px; color:var(--gray-muted); margin-bottom:10px;">Do 2–3× per week, after your workout. Takes 5–8 minutes.</div>
+  <div class="section-sub">Mobility and drills for a stronger, consistent swing</div>
+  <div class="golf-card" style="background:var(--green-pale);border:1px solid var(--green-mid);">
+    <div class="golf-card-title" style="color:var(--green);">Golf Mobility Circuit</div>
+    <div style="font-size:11px;color:var(--gray-muted);margin-bottom:10px;">Do 2–3× per week after your workout. Takes 5–8 minutes.</div>
     <div id="golf-circuit"></div>
   </div>
-
-  <div class="section-title" style="font-size:17px; margin:16px 0 4px;">Key Lifts for Golf Power</div>
+  <div class="section-title" style="font-size:16px;margin:14px 0 3px;">Key Lifts for Golf Power</div>
   <div class="section-sub">These exercises directly transfer to your game</div>
-
-  <div class="golf-card">
-    <div class="golf-card-title">Cable Woodchoppers</div>
-    <div style="font-size:13px; color:var(--gray-text); margin-bottom:8px; line-height:1.6;">
-      <strong>Why it matters:</strong> Directly mimics the rotational power of a golf swing.<br>
-      <strong>How:</strong> Set Ares cable at high position. Stand sideways, pull handle diagonally from high to low across your body. Keep hips stable and rotate through core.<br>
-      <strong>Sets/Reps:</strong> 3 × 12–15 each side
-    </div>
-    <div class="tip-row">Focus: explosive pull, controlled return</div>
-  </div>
-
-  <div class="golf-card">
-    <div class="golf-card-title">Face Pulls</div>
-    <div style="font-size:13px; color:var(--gray-text); margin-bottom:8px; line-height:1.6;">
-      <strong>Why it matters:</strong> Builds rotator cuff strength — prevents the most common golf injury.<br>
-      <strong>How:</strong> Set Ares at forehead height. Pull rope toward face, flare elbows wide, squeeze shoulder blades.<br>
-      <strong>Sets/Reps:</strong> 3 × 12–15
-    </div>
-    <div class="tip-row">Do these on every upper body day</div>
-  </div>
-
-  <div class="golf-card">
-    <div class="golf-card-title">Romanian Deadlift</div>
-    <div style="font-size:13px; color:var(--gray-text); margin-bottom:8px; line-height:1.6;">
-      <strong>Why it matters:</strong> Hip hinge strength = power through the ball at impact.<br>
-      <strong>How:</strong> Push hips back, lower bar along legs, squeeze glutes to return.<br>
-      <strong>Sets/Reps:</strong> 3 × 8–10
-    </div>
-  </div>
-
-  <div class="golf-card">
-    <div class="golf-card-title">Bulgarian Split Squat</div>
-    <div style="font-size:13px; color:var(--gray-text); margin-bottom:8px; line-height:1.6;">
-      <strong>Why it matters:</strong> Single-leg stability improves your golf stance and prevents hip sway.<br>
-      <strong>Sets/Reps:</strong> 3 × 8–10 each leg
-    </div>
-  </div>
-
-  <div style="background:var(--amber-pale); border-left:3px solid var(--amber-light); border-radius:var(--radius); padding:12px 14px; font-size:13px; margin-top:16px;">
-    <strong style="display:block; font-weight:600; margin-bottom:4px; color:var(--amber);">Driver Distance Goal</strong>
-    <span style="color:var(--gray-text);">With 3–4 months of this program + golf mobility work, expect 10–20 yards added to your driver through better hip rotation and shoulder stability.</span>
-  </div>
+  <div class="golf-card"><div class="golf-card-title">Cable Woodchoppers</div><div style="font-size:12px;color:var(--gray-text);line-height:1.6;margin-bottom:6px;"><strong>Why:</strong> Directly mimics rotational power of a golf swing.<br><strong>How:</strong> Ares cable at high position. Stand sideways. Pull diagonally from high to low. Rotate through core.<br><strong>Sets/Reps:</strong> 3 × 12–15 each side</div><div class="tip-row">Explosive pull, controlled return</div></div>
+  <div class="golf-card"><div class="golf-card-title">Face Pulls</div><div style="font-size:12px;color:var(--gray-text);line-height:1.6;margin-bottom:6px;"><strong>Why:</strong> Builds rotator cuff — prevents most common golf injury.<br><strong>How:</strong> Ares at forehead height. Pull rope to face, elbows wide and high.<br><strong>Sets/Reps:</strong> 3 × 12–15 — do on every upper body day</div></div>
+  <div class="golf-card"><div class="golf-card-title">Romanian Deadlift</div><div style="font-size:12px;color:var(--gray-text);line-height:1.6;"><strong>Why:</strong> Hip hinge strength = power at impact.<br><strong>Sets/Reps:</strong> 3 × 8–10</div></div>
+  <div style="background:var(--amber-pale);border-left:3px solid var(--amber-light);border-radius:var(--radius);padding:11px 13px;font-size:12px;margin-top:14px;"><strong style="display:block;font-weight:600;margin-bottom:3px;color:var(--amber);">Driver Distance Goal</strong><span style="color:var(--gray-text);">With 3–4 months of this program + golf mobility work, expect 10–20 yards added through better hip rotation and shoulder stability.</span></div>
 </div>
 
-<!-- ======= PROGRESS PAGE ======= -->
+<!-- PROGRESS -->
 <div class="page" id="page-progress">
   <div class="section-title">Progress Tracker</div>
   <div class="section-sub">Log your weights — see how far you've come</div>
-
-  <div style="background:var(--teal-pale); border-left:3px solid var(--teal); border-radius:var(--radius); padding:10px 14px; font-size:13px; color:var(--teal); margin-bottom:16px;">
-    <strong style="display:block; font-weight:600; margin-bottom:3px;">Double Progression Rule</strong>
-    When you hit the top rep range for all sets → add 5–10 lbs next session.
-  </div>
-
-  <div class="section-title" style="font-size:16px; margin-bottom:10px;">Main Lifts</div>
+  <div style="background:var(--teal-pale);border-left:3px solid var(--teal);border-radius:var(--radius);padding:10px 13px;font-size:12px;color:var(--teal);margin-bottom:14px;"><strong style="display:block;font-weight:600;margin-bottom:3px;">Double Progression Rule</strong>Hit top reps on all sets → add 5–10 lbs next session.</div>
+  <div class="section-title" style="font-size:15px;margin-bottom:9px;">Main Lifts — Current Weight</div>
   <div id="progress-lifts"></div>
-
-  <div class="section-title" style="font-size:16px; margin:16px 0 8px;">Deadlift Progression Plan</div>
-  <div style="background:#fff; border:1px solid var(--gray-border); border-radius:var(--radius); overflow:hidden;">
-    <table style="width:100%; border-collapse:collapse; font-size:13px;">
-      <thead>
-        <tr style="background:var(--green-pale);">
-          <th style="padding:9px 12px; text-align:left; font-weight:600; color:var(--green); font-size:12px;">Week</th>
-          <th style="padding:9px 12px; text-align:left; font-weight:600; color:var(--green); font-size:12px;">Weight</th>
-          <th style="padding:9px 12px; text-align:left; font-weight:600; color:var(--green); font-size:12px;">Sets × Reps</th>
-        </tr>
-      </thead>
+  <div class="section-title" style="font-size:15px;margin:14px 0 7px;">Deadlift 12-Week Plan</div>
+  <div style="background:#fff;border:1px solid var(--gray-border);border-radius:var(--radius);overflow:hidden;">
+    <table style="width:100%;border-collapse:collapse;font-size:12px;">
+      <thead><tr style="background:var(--green-pale);"><th style="padding:8px 11px;text-align:left;font-weight:600;color:var(--green);font-size:11px;">Week</th><th style="padding:8px 11px;text-align:left;font-weight:600;color:var(--green);font-size:11px;">Weight</th><th style="padding:8px 11px;text-align:left;font-weight:600;color:var(--green);font-size:11px;">Sets × Reps</th></tr></thead>
       <tbody id="deadlift-table"></tbody>
     </table>
   </div>
-
-  <div class="section-title" style="font-size:16px; margin:16px 0 8px;">Body Stats</div>
-  <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:16px;">
-    <div class="summary-card" style="text-align:left;">
-      <div style="font-size:11px; color:var(--gray-muted); margin-bottom:6px;">CURRENT WEIGHT</div>
-      <div style="display:flex; align-items:center; gap:8px;">
-        <input type="number" id="body-weight" class="lift-weight-input" placeholder="170" style="width:70px;">
-        <span style="font-size:13px; color:var(--gray-muted);">lbs</span>
-      </div>
-    </div>
-    <div class="summary-card" style="text-align:left;">
-      <div style="font-size:11px; color:var(--gray-muted); margin-bottom:6px;">TARGET WEIGHT</div>
-      <div style="font-weight:600; font-size:18px; color:var(--green);">165–168 lbs</div>
-    </div>
-  </div>
-
-  <div style="background:var(--amber-pale); border-left:3px solid var(--amber-light); border-radius:var(--radius); padding:10px 14px; font-size:13px; margin-bottom:16px;">
-    <strong style="display:block; font-weight:600; margin-bottom:3px; color:var(--amber);">Recovery Checklist</strong>
-    <div style="color:var(--gray-text); line-height:1.8;">
-      Sleep 7–8 hours &nbsp;·&nbsp; Stretch after workouts<br>
-      Don't max out &nbsp;·&nbsp; 1 rep in reserve always<br>
-      Deload week every 6–8 weeks
-    </div>
+  <div class="section-title" style="font-size:15px;margin:14px 0 7px;">Body Stats</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:9px;">
+    <div class="summary-card" style="text-align:left;"><div style="font-size:10px;color:var(--gray-muted);margin-bottom:5px;">CURRENT WEIGHT</div><div style="display:flex;align-items:center;gap:7px;"><input type="number" id="body-weight" class="lift-weight-input" placeholder="170"><span style="font-size:12px;color:var(--gray-muted);">lbs</span><button class="save-btn" onclick="saveBodyWeight()">Save</button></div></div>
+    <div class="summary-card" style="text-align:left;"><div style="font-size:10px;color:var(--gray-muted);margin-bottom:5px;">TARGET WEIGHT</div><div style="font-weight:600;font-size:17px;color:var(--green);">165–168 lbs</div></div>
   </div>
 </div>
 
-<div class="footer-note">REP PR-5000 + Ares 2.0 · Age-smart program for golf, strength & fat loss</div>
+<!-- HISTORY -->
+<div class="page" id="page-history">
+  <div class="section-title">Workout History</div>
+  <div class="section-sub">Tap any highlighted day to review exactly what you lifted</div>
+  <div class="history-month-nav">
+    <button class="date-nav-btn" onclick="changeHistoryMonth(-1)">&#9664;</button>
+    <div class="month-title" id="history-month-title"></div>
+    <button class="date-nav-btn" onclick="changeHistoryMonth(1)">&#9654;</button>
+  </div>
+  <div class="cal-grid" id="cal-headers"></div>
+  <div class="cal-grid" id="cal-grid" style="margin-bottom:16px;"></div>
+  <div id="history-detail"></div>
+</div>
+
+<div class="footer-note">REP PR-5000 + Ares 2.0 &nbsp;·&nbsp; All data saves automatically in your browser &nbsp;·&nbsp; Use History tab to go back in time</div>
 
 <script>
-// Data
-const day1Data = [
-  { name:"Barbell Bench Press", badge:"rack", sets:4, repRange:"5–8", rest:"2 min", notes:"Strength foundation. Elbows at 45°. Bar to mid-chest. No bouncing.", tips:"Feet flat on floor, arch in lower back, wrists straight." },
-  { name:"Incline Dumbbell Press", badge:"db", sets:3, repRange:"8–10", rest:"90 sec", notes:"Set bench 30–35°. Press up until arms extend. Lower slowly.", tips:"Focus upper chest. Control the lowering phase." },
-  { name:"Cable Chest Fly (Ares)", badge:"ares", sets:3, repRange:"12–15", rest:"75 sec", notes:"Pulleys at chest height. Split stance. Arms slightly bent. Bring handles together.", tips:"Squeeze chest at front. Slow return is key." },
-  { name:"Standing Overhead Press", badge:"rack", sets:3, repRange:"6–8", rest:"2 min", notes:"Bar at shoulder level. Brace core. Press overhead. Lock arms.", tips:"Tight core. Straight bar path. Use moderate weight — shoulder health first." },
-  { name:"Cable Lateral Raise (Ares)", badge:"ares", sets:3, repRange:"12–15", rest:"60 sec", notes:"Pulley at lowest position. Outside hand grabs handle. Raise to shoulder height.", tips:"Light weight. Controlled movement. Don't shrug." },
-  { name:"Cable Triceps Pushdown (Ares)", badge:"ares", sets:3, repRange:"10–15", rest:"60 sec", notes:"Rope attachment. Elbows tucked at sides. Push down and extend fully.", tips:"Only elbows move. Full extension at bottom." }
-];
-
-const day2Data = [
-  { name:"Back Squat", badge:"rack", sets:4, repRange:"5–8", rest:"2 min", notes:"Bar across upper back (not neck). Feet shoulder-width. Sit back and down to parallel.", tips:"Chest up, knees track over toes, neutral spine. Drive through heels." },
-  { name:"Romanian Deadlift", badge:"db", sets:3, repRange:"8–10", rest:"90 sec", notes:"Hold bar or dumbbells. Slight knee bend. Push hips back. Lower along legs until hamstrings stretch.", tips:"Hinge, don't squat. Flat back always. Squeeze glutes to return." },
-  { name:"Bulgarian Split Squat", badge:"db", sets:3, repRange:"8–10 /leg", rest:"90 sec", notes:"Back foot elevated on bench. Hold dumbbells. Lower until front thigh parallel.", tips:"Front leg does most work. Keep torso upright. Best belt squat replacement." },
-  { name:"Cable Hamstring Curl (Ares)", badge:"ares", sets:3, repRange:"12–15", rest:"60 sec", notes:"Ankle strap. Stand upright holding rack. Curl heel toward glutes.", tips:"Slow control. No swinging." },
-  { name:"Dumbbell Walking Lunges", badge:"db", sets:3, repRange:"10 /leg", rest:"75 sec", notes:"Hold dumbbells at sides. Step forward. Lower until back knee nearly touches floor.", tips:"Stay upright. Push through front heel." },
-  { name:"Standing Calf Raises", badge:"db", sets:4, repRange:"15–20", rest:"45 sec", notes:"Hold dumbbells. Stand on a step if possible. Full stretch at bottom, full squeeze at top.", tips:"Slow and controlled. Full range of motion." }
-];
-
-const day3Data = [
-  { name:"Lat Pulldown (Ares)", badge:"ares", sets:4, repRange:"8–10", rest:"90 sec", notes:"Pull elbows down, not hands. Bring bar to upper chest. Control the return.", tips:"Lean back slightly. Squeeze lats at bottom." },
-  { name:"Barbell Row", badge:"rack", sets:3, repRange:"6–10", rest:"2 min", notes:"Flat back. Pull to lower ribs. Controlled — no jerking.", tips:"Brace core. Hinge at hips. Elbows pull back past your body." },
-  { name:"Seated Cable Row (Ares)", badge:"ares", sets:3, repRange:"10–12", rest:"75 sec", notes:"Sit tall. Pull handle to lower chest. Squeeze shoulder blades together.", tips:"Don't let shoulders round forward on the return." },
-  { name:"Face Pulls (Ares)", badge:"ares", sets:3, repRange:"12–15", rest:"60 sec", notes:"Cable at forehead height. Pull rope to face with elbows wide and high. Squeeze rear delts.", tips:"VERY IMPORTANT for shoulder health and golf swing. Never skip this." },
-  { name:"Cable Curl (Ares)", badge:"ares", sets:3, repRange:"10–12", rest:"60 sec", notes:"Stand at low pulley. Curl handles up. Keep elbows at sides.", tips:"Full extension at bottom. Squeeze at top." },
-  { name:"Dumbbell Hammer Curl", badge:"db", sets:3, repRange:"10–12", rest:"60 sec", notes:"Neutral grip (thumbs up). Curl up. Keep elbows still.", tips:"Builds brachialis and forearm strength." }
-];
-
-const day4Data = [
-  { name:"Deadlift", badge:"rack", sets:4, repRange:"3–6", rest:"3 min", notes:"Bar over mid-foot. Hinge down. Chest up. Push floor away. Bar stays close to legs.", tips:"This is your main strength lift. Not a max attempt — steady strength. Back protection routine before this." },
-  { name:"Goblet Squat", badge:"db", sets:3, repRange:"8–10", rest:"90 sec", notes:"Hold dumbbell at chest. Feet shoulder-width. Squat deep. Elbows inside knees.", tips:"Great quad work with less spinal load. Good for golf stance." },
-  { name:"Cable Woodchoppers (Ares)", badge:"ares", sets:3, repRange:"12–15 /side", rest:"60 sec", notes:"Cable at high position. Stand sideways. Pull diagonally from high to low. Rotate through core.", tips:"This directly helps your golf swing rotation. Focus on explosive pull, slow return." },
-  { name:"Reverse Lunges (Dumbbells)", badge:"db", sets:3, repRange:"10 /leg", rest:"75 sec", notes:"Step backward into lunge. Lower until both knees at 90°. Push through front heel.", tips:"Easier on knees than forward lunges." },
-  { name:"Hanging Leg Raises", badge:"bw", sets:3, repRange:"10–15", rest:"60 sec", notes:"Hang from pull-up bar. Raise knees (or straight legs) to waist height. Lower slowly.", tips:"No swinging. Control both directions." },
-  { name:"Plank", badge:"bw", sets:3, repRange:"30–60 sec", rest:"45 sec", notes:"Forearms on floor. Body in straight line. Hold.", tips:"Squeeze glutes and abs. Breathe normally." }
-];
-
-const golfCircuit = [
-  { name:"Torso Rotations", reps:"15 reps", desc:"Stand feet shoulder-width. Arms crossed on chest. Rotate fully left and right. Keep hips stable." },
-  { name:"Hip Rotations", reps:"10 each side", desc:"Hold a club behind shoulders. Rotate hips left and right while shoulders stay level." },
-  { name:"Shoulder Dislocates", reps:"15 reps", desc:"Hold a band or club with wide grip. Rotate arms overhead and behind back. Improves shoulder flexibility." },
-  { name:"Cat/Cow Stretch", reps:"10 reps", desc:"On hands and knees. Arch back up (cat), then let it sag down (cow). Mobilizes the spine." },
-  { name:"90/90 Hip Stretch", reps:"45 sec each side", desc:"Sit with front and back leg at 90°. Lean forward over front shin. Opens hip for golf rotation." }
-];
-
-const progressLifts = [
-  { name:"Bench Press", target:"135–185 lbs", start:"95–115 lbs", notes:"4×5–8" },
-  { name:"Back Squat", target:"135–225 lbs", start:"95–115 lbs", notes:"4×5–8" },
-  { name:"Deadlift", target:"155–175 lbs", start:"95–115 lbs", notes:"4×3–6" },
-  { name:"Overhead Press", target:"85–115 lbs", start:"55–65 lbs", notes:"3×6–8" },
-  { name:"Barbell Row", target:"115–155 lbs", start:"75–95 lbs", notes:"3×6–10" },
-  { name:"Romanian Deadlift", target:"115–155 lbs", start:"65–85 lbs", notes:"3×8–10" }
-];
-
-const deadliftPlan = [
-  { week:"1–2", weight:"115 lbs", sets:"4 × 5" },
-  { week:"3–4", weight:"125 lbs", sets:"4 × 5" },
-  { week:"5–6", weight:"135 lbs", sets:"4 × 5" },
-  { week:"7–8", weight:"145 lbs", sets:"4 × 5" },
-  { week:"9–10", weight:"155 lbs", sets:"4 × 4–5" },
-  { week:"11–12", weight:"165–175 lbs", sets:"4 × 3–5" }
-];
-
-const badgeColors = {
-  ares: "badge-ares",
-  rack: "badge-rack",
-  db: "badge-db",
-  bw: "badge-bw",
-  golf: "badge-golf"
-};
-const badgeLabels = {
-  ares:"Ares 2.0", rack:"Rack/Bar", db:"Dumbbells", bw:"Bodyweight", golf:"Golf Focus"
-};
-const numColors = {
-  ares:"background:var(--teal-pale);color:var(--teal);",
-  rack:"background:var(--blue-pale);color:var(--blue);",
-  db:"background:var(--amber-pale);color:var(--amber);",
-  bw:"background:#F1EFE8;color:#5F5E5A;",
-  golf:"background:var(--green-pale);color:var(--green);"
+var DAY_DATA={
+  day1:[
+    {name:"Barbell Bench Press",badge:"rack",sets:4,repRange:"5-8",rest:"2 min",notes:"Lie flat. Bar to mid-chest. Elbows at 45 degrees. Press up until arms extend.",tips:"Feet flat on floor. No bouncing off chest. Control the lowering."},
+    {name:"Incline Dumbbell Press",badge:"db",sets:3,repRange:"8-10",rest:"90 sec",notes:"Bench at 30-35 degrees. Press up until arms extend. Lower slowly.",tips:"Focus upper chest. Control the lowering phase."},
+    {name:"Cable Chest Fly (Ares)",badge:"ares",sets:3,repRange:"12-15",rest:"75 sec",notes:"Pulleys at chest height. Split stance. Arms slightly bent. Bring handles together in front of chest.",tips:"Squeeze chest at front. Slow return is key."},
+    {name:"Standing Overhead Press",badge:"rack",sets:3,repRange:"6-8",rest:"2 min",notes:"Bar at shoulder level. Brace core tightly. Press overhead. Lock arms fully.",tips:"Tight core. Straight bar path. Use moderate weight."},
+    {name:"Cable Lateral Raise (Ares)",badge:"ares",sets:3,repRange:"12-15",rest:"60 sec",notes:"Pulley at lowest position. Outside hand grabs handle. Raise arm to shoulder height. Lower slowly.",tips:"Light weight. Controlled movement. Don't shrug."},
+    {name:"Cable Triceps Pushdown (Ares)",badge:"ares",sets:3,repRange:"10-15",rest:"60 sec",notes:"Rope attachment. Elbows tucked at sides. Push down and extend fully. Return slowly.",tips:"Only elbows move. Full extension at bottom."}
+  ],
+  day2:[
+    {name:"Back Squat",badge:"rack",sets:4,repRange:"5-8",rest:"2 min",notes:"Bar across upper back. Feet shoulder-width. Sit back and down to at least parallel.",tips:"Chest up, knees track over toes, neutral spine. Drive through heels."},
+    {name:"Romanian Deadlift",badge:"db",sets:3,repRange:"8-10",rest:"90 sec",notes:"Hold bar or dumbbells. Slight knee bend. Push hips back. Lower along legs until hamstrings stretch.",tips:"Hinge, don't squat. Flat back always. Squeeze glutes to return."},
+    {name:"Bulgarian Split Squat",badge:"db",sets:3,repRange:"8-10/leg",rest:"90 sec",notes:"Back foot elevated on bench. Hold dumbbells at sides. Lower until front thigh is parallel to floor.",tips:"Front leg does most work. Keep torso upright. Best replacement for belt squat."},
+    {name:"Cable Hamstring Curl (Ares)",badge:"ares",sets:3,repRange:"12-15",rest:"60 sec",notes:"Ankle strap attached. Stand upright holding rack. Curl heel toward glutes. Lower slowly.",tips:"Slow controlled movement. No swinging."},
+    {name:"Dumbbell Walking Lunges",badge:"db",sets:3,repRange:"10/leg",rest:"75 sec",notes:"Hold dumbbells at sides. Step forward into lunge. Lower until back knee nearly touches floor.",tips:"Stay upright. Push through front heel. Smooth steps."},
+    {name:"Standing Calf Raises",badge:"db",sets:4,repRange:"15-20",rest:"45 sec",notes:"Hold dumbbells. Stand on a step if possible. Raise heels fully. Lower slowly for full stretch.",tips:"Full stretch at bottom. Full squeeze at top. Controlled speed."}
+  ],
+  day3:[
+    {name:"Lat Pulldown (Ares)",badge:"ares",sets:4,repRange:"8-10",rest:"90 sec",notes:"Pull elbows down toward hips, not just hands. Bring bar to upper chest. Control the return slowly.",tips:"Lean back slightly. Squeeze lats at bottom position."},
+    {name:"Barbell Row",badge:"rack",sets:3,repRange:"6-10",rest:"2 min",notes:"Hinge at hips, flat back. Pull bar to lower ribs. Lower controlled. No jerking.",tips:"Brace core. Elbows travel past your body. No back rounding."},
+    {name:"Seated Cable Row (Ares)",badge:"ares",sets:3,repRange:"10-12",rest:"75 sec",notes:"Sit tall on bench. Pull handle to lower chest. Squeeze shoulder blades together.",tips:"Don't let shoulders round forward on the return."},
+    {name:"Face Pulls (Ares)",badge:"ares",sets:3,repRange:"12-15",rest:"60 sec",notes:"Cable at forehead height. Pull rope to face with elbows wide and high. Squeeze rear delts hard.",tips:"Critical for shoulder health and golf swing. Never skip this."},
+    {name:"Cable Curl (Ares)",badge:"ares",sets:3,repRange:"10-12",rest:"60 sec",notes:"Stand at low pulley. Curl handles up toward shoulders. Keep elbows at sides.",tips:"Full extension at bottom. Squeeze at the top."},
+    {name:"Dumbbell Hammer Curl",badge:"db",sets:3,repRange:"10-12",rest:"60 sec",notes:"Neutral grip with thumbs pointing up. Curl up. Keep elbows still throughout.",tips:"Builds brachialis and forearm strength."}
+  ],
+  day4:[
+    {name:"Deadlift",badge:"rack",sets:4,repRange:"3-6",rest:"3 min",notes:"Bar over mid-foot. Hip hinge down. Chest up tall. Push floor away to stand. Bar stays close to legs throughout.",tips:"This is your main strength lift. Not a max attempt. Do back protection routine first."},
+    {name:"Goblet Squat",badge:"db",sets:3,repRange:"8-10",rest:"90 sec",notes:"Hold dumbbell at chest with both hands. Feet shoulder-width. Squat deep. Elbows inside knees.",tips:"Less spinal load than barbell squat. Great for golf stance and mobility."},
+    {name:"Cable Woodchoppers (Ares)",badge:"ares",sets:3,repRange:"12-15/side",rest:"60 sec",notes:"Cable at high position. Stand sideways. Pull handle diagonally from high to low. Rotate through core.",tips:"Directly helps your golf swing rotation. Explosive pull, slow controlled return."},
+    {name:"Reverse Lunges (Dumbbells)",badge:"db",sets:3,repRange:"10/leg",rest:"75 sec",notes:"Hold dumbbells at sides. Step backward into lunge. Lower until both knees at 90 degrees. Push through front heel.",tips:"Easier on knees than forward lunges. Good for balance."},
+    {name:"Hanging Leg Raises",badge:"bw",sets:3,repRange:"10-15",rest:"60 sec",notes:"Hang from pull-up bar. Raise knees or straight legs to waist height. Lower slowly.",tips:"No swinging. Control both the raising and lowering."},
+    {name:"Plank",badge:"bw",sets:3,repRange:"30-60 sec",rest:"45 sec",notes:"Forearms on floor. Body in one straight line from head to heels. Hold position.",tips:"Squeeze glutes and abs throughout. Breathe normally."}
+  ]
 };
 
-function buildExercises(data, containerId, dayCode) {
-  const container = document.getElementById(containerId);
-  if (!container) return;
-  let html = '';
-  data.forEach((ex, i) => {
-    const cardId = `${dayCode}-card-${i}`;
-    let setsHtml = '';
-    for (let s = 1; s <= ex.sets; s++) {
-      setsHtml += `
-        <div class="set-row">
-          <div class="set-check" id="${cardId}-s${s}" onclick="toggleSet('${cardId}-s${s}','${dayCode}')"></div>
-          <span class="set-label">Set ${s}</span>
-          <input type="number" class="set-input" placeholder="lbs" id="${cardId}-w${s}">
-          <span class="set-x">×</span>
-          <input type="number" class="set-reps" placeholder="reps" id="${cardId}-r${s}">
-          <span class="set-target">${ex.repRange}</span>
-        </div>`;
+var BADGE_COLORS={ares:"badge-ares",rack:"badge-rack",db:"badge-db",bw:"badge-bw"};
+var BADGE_LABELS={ares:"Ares 2.0",rack:"Rack/Bar",db:"Dumbbells",bw:"Bodyweight"};
+var NUM_COLORS={ares:"background:var(--teal-pale);color:var(--teal);",rack:"background:var(--blue-pale);color:var(--blue);",db:"background:var(--amber-pale);color:var(--amber);",bw:"background:#F1EFE8;color:#5F5E5A;"};
+var DAY_COLORS={day1:{bg:"var(--blue-pale)",color:"var(--blue)",label:"Push"},day2:{bg:"var(--red-pale)",color:"var(--red)",label:"Legs"},day3:{bg:"var(--teal-pale)",color:"var(--teal)",label:"Pull"},day4:{bg:"var(--green-pale)",color:"var(--green)",label:"Full Body"}};
+var DEADLIFT_PLAN=[{week:"1-2",weight:"115 lbs",sets:"4 x 5"},{week:"3-4",weight:"125 lbs",sets:"4 x 5"},{week:"5-6",weight:"135 lbs",sets:"4 x 5"},{week:"7-8",weight:"145 lbs",sets:"4 x 5"},{week:"9-10",weight:"155 lbs",sets:"4 x 4-5"},{week:"11-12",weight:"165-175 lbs",sets:"4 x 3-5"}];
+var PROGRESS_LIFTS=[{name:"Bench Press",target:"135-185 lbs",start:"95-115 lbs",notes:"4x5-8"},{name:"Back Squat",target:"135-225 lbs",start:"95-115 lbs",notes:"4x5-8"},{name:"Deadlift",target:"155-175 lbs",start:"95-115 lbs",notes:"4x3-6"},{name:"Overhead Press",target:"85-115 lbs",start:"55-65 lbs",notes:"3x6-8"},{name:"Barbell Row",target:"115-155 lbs",start:"75-95 lbs",notes:"3x6-10"},{name:"Romanian Deadlift",target:"115-155 lbs",start:"65-85 lbs",notes:"3x8-10"}];
+var GOLF_CIRCUIT=[{name:"Torso Rotations",reps:"15 reps",desc:"Feet shoulder-width. Arms crossed on chest. Rotate fully left and right. Keep hips stable."},{name:"Hip Rotations",reps:"10 each side",desc:"Hold a club behind shoulders. Rotate hips left and right while shoulders stay level."},{name:"Shoulder Dislocates",reps:"15 reps",desc:"Hold a band with wide grip. Rotate arms overhead and behind back. Improves shoulder flexibility."},{name:"Cat/Cow Stretch",reps:"10 reps",desc:"On hands and knees. Arch back up (cat), then let it sag down (cow). Mobilizes the spine."},{name:"90/90 Hip Stretch",reps:"45 sec each side",desc:"Sit with front and back leg at 90 degrees. Lean forward over front shin. Opens hip for golf rotation."}];
+
+var activeDates={day1:todayKey(),day2:todayKey(),day3:todayKey(),day4:todayKey()};
+var historyMonth={year:new Date().getFullYear(),month:new Date().getMonth()};
+
+function todayKey(){var d=new Date();return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate());}
+function pad(n){return n<10?"0"+n:String(n);}
+function formatDate(dk){var p=dk.split("-");var months=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];var days=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];var dt=new Date(+p[0],+p[1]-1,+p[2]);return days[dt.getDay()]+", "+months[+p[1]-1]+" "+p[2]+", "+p[0];}
+function isToday(dk){return dk===todayKey();}
+function skey(dc,dk,ei,si,f){return"wd_"+dc+"_"+dk+"_e"+ei+"_s"+si+"_"+f;}
+function lf(k,d){try{var v=localStorage.getItem(k);return v!==null?v:(d||"");}catch(e){return d||"";}}
+function sf(k,v){try{localStorage.setItem(k,v);flashSaved();}catch(e){}}
+var _st=null;
+function flashSaved(){var el=document.getElementById("save-indicator");if(el){el.textContent="Saved automatically";clearTimeout(_st);_st=setTimeout(function(){el.textContent="All changes saved automatically";},1500);}}
+
+function buildDateBar(dc){
+  var c=document.getElementById("dateBar-"+dc);if(!c)return;
+  var dk=activeDates[dc];var past=!isToday(dk);
+  c.innerHTML='<div class="date-bar"><div><div class="date-bar-label">WORKOUT DATE</div><div class="date-display">'+formatDate(dk)+'</div></div><div class="date-controls"><button class="date-nav-btn" onclick="navDate(\''+dc+'\',-1)">&#9664;</button><button class="date-nav-btn" onclick="navDate(\''+dc+'\',1)"'+(isToday(dk)?' disabled style="opacity:0.4;"':'')+'>&#9654;</button>'+(past?'<button class="today-btn" onclick="goToday(\''+dc+'\')">Today</button>':'')+''+(past?'<span class="past-badge">Viewing past</span>':'')+'</div></div>';
+}
+
+function navDate(dc,dir){
+  var cur=activeDates[dc];var p=cur.split("-").map(Number);var dt=new Date(p[0],p[1]-1,p[2]);
+  dt.setDate(dt.getDate()+dir);
+  var nk=dt.getFullYear()+"-"+pad(dt.getMonth()+1)+"-"+pad(dt.getDate());
+  if(nk>todayKey())return;
+  activeDates[dc]=nk;buildDateBar(dc);buildExercises(dc,dc+"-exercises");
+}
+function goToday(dc){activeDates[dc]=todayKey();buildDateBar(dc);buildExercises(dc,dc+"-exercises");}
+
+function buildExercises(dc,cid){
+  var c=document.getElementById(cid);if(!c)return;
+  var data=DAY_DATA[dc];var dk=activeDates[dc];var html="";
+  data.forEach(function(ex,i){
+    var eid=dc+"_"+dk+"_ex"+i;var shtml="";
+    for(var s=0;s<ex.sets;s++){
+      var done=lf(skey(dc,dk,i,s,"done"))==="1";
+      var wv=lf(skey(dc,dk,i,s,"weight"),"");var rv=lf(skey(dc,dk,i,s,"reps"),"");
+      shtml+='<div class="set-row"><div class="set-check'+(done?" done":"")+'" id="'+eid+'-s'+s+'" onclick="toggleSet(\''+eid+'\','+s+',\''+dc+'\',\''+dk+'\','+i+')">'+(done?"&#10003;":"")+'</div><span class="set-label">Set '+(s+1)+'</span><input type="number" class="set-input" placeholder="lbs" value="'+wv+'" onchange="sf(\''+skey(dc,dk,i,s,'weight')+'\',this.value)" oninput="sf(\''+skey(dc,dk,i,s,'weight')+'\',this.value)"><span class="set-x">x</span><input type="number" class="set-reps" placeholder="reps" value="'+rv+'" onchange="sf(\''+skey(dc,dk,i,s,'reps')+'\',this.value)" oninput="sf(\''+skey(dc,dk,i,s,'reps')+'\',this.value)"><span class="set-target">'+ex.repRange+'</span></div>';
     }
-    html += `
-      <div class="exercise-card" id="${cardId}-card">
-        <div class="exercise-header" onclick="toggleCard('${cardId}-card')">
-          <div class="exercise-num" style="${numColors[ex.badge]}">${i+1}</div>
-          <div style="flex:1;">
-            <div class="exercise-name">${ex.name}</div>
-            <div class="exercise-meta">${ex.sets} sets · ${ex.repRange} reps · Rest ${ex.rest||'90 sec'}</div>
-          </div>
-          <span class="exercise-badge ${badgeColors[ex.badge]}">${badgeLabels[ex.badge]}</span>
-          <span class="chevron">▼</span>
-        </div>
-        <div class="exercise-body">
-          <div class="instructions">
-            <div style="font-weight:500; font-size:13px; margin-bottom:4px; color:var(--gray-text);">How to perform:</div>
-            <p style="margin-bottom:6px;">${ex.notes}</p>
-          </div>
-          <div class="tip-row">Tip: ${ex.tips}</div>
-          <div class="set-tracker-title">Track Your Sets</div>
-          <div class="sets-grid">${setsHtml}</div>
-          <div class="progress-row">
-            <div class="progress-bar-bg"><div class="progress-bar-fill" id="${cardId}-bar" style="width:0%"></div></div>
-            <span class="progress-pct" id="${cardId}-pct">0%</span>
-          </div>
-        </div>
-      </div>`;
+    var prog=getProgress(dc,dk,i,ex.sets);var pct=prog.total>0?Math.round((prog.done/prog.total)*100):0;
+    html+='<div class="exercise-card" id="'+eid+'-card"><div class="exercise-header" onclick="toggleCard(\''+eid+'-card\')"><div class="exercise-num" style="'+NUM_COLORS[ex.badge]+'">'+(i+1)+'</div><div style="flex:1;"><div class="exercise-name">'+ex.name+'</div><div class="exercise-meta">'+ex.sets+' sets &middot; '+ex.repRange+' reps &middot; Rest '+ex.rest+'</div></div><span class="exercise-badge '+BADGE_COLORS[ex.badge]+'">'+BADGE_LABELS[ex.badge]+'</span><span class="chevron">&#9660;</span></div><div class="exercise-body"><div class="instructions"><div style="font-weight:500;font-size:12px;margin-bottom:3px;color:var(--gray-text);">How to perform:</div><p style="margin-bottom:5px;">'+ex.notes+'</p></div><div class="tip-row">Tip: '+ex.tips+'</div><div class="set-tracker-title">Track Your Sets</div><div class="sets-grid">'+shtml+'</div><div class="progress-row"><div class="progress-bar-bg"><div class="progress-bar-fill" id="'+eid+'-bar" style="width:'+pct+'%"></div></div><span class="progress-pct" id="'+eid+'-pct">'+pct+'%</span></div></div></div>';
   });
-  container.innerHTML = html;
+  c.innerHTML=html;updateDaySummary(dc,dk);
 }
 
-function toggleCard(id) {
-  const card = document.getElementById(id);
-  card.classList.toggle('open');
+function getProgress(dc,dk,ei,ns){var done=0;for(var s=0;s<ns;s++){if(lf(skey(dc,dk,ei,s,"done"))==="1")done++;}return{total:ns,done:done};}
+
+function toggleSet(eid,si,dc,dk,ei){
+  var el=document.getElementById(eid+"-s"+si);var k=skey(dc,dk,ei,si,"done");
+  var was=lf(k)==="1";var now=!was;sf(k,now?"1":"0");
+  el.classList.toggle("done",now);el.innerHTML=now?"&#10003;":"";
+  updateCardProgress(eid,dc,dk,ei);updateDaySummary(dc,dk);
 }
 
-const setStatus = {};
+function updateCardProgress(eid,dc,dk,ei){
+  var data=DAY_DATA[dc];var ex=data[ei];var prog=getProgress(dc,dk,ei,ex.sets);
+  var pct=prog.total>0?Math.round((prog.done/prog.total)*100):0;
+  var b=document.getElementById(eid+"-bar");var p=document.getElementById(eid+"-pct");
+  if(b)b.style.width=pct+"%";if(p)p.textContent=pct+"%";
+}
 
-function toggleSet(id, dayCode) {
-  const el = document.getElementById(id);
-  const done = !setStatus[id];
-  setStatus[id] = done;
-  if (done) {
-    el.classList.add('done');
-    el.innerHTML = '✓';
-  } else {
-    el.classList.remove('done');
-    el.innerHTML = '';
+function updateDaySummary(dc,dk){
+  var data=DAY_DATA[dc];var total=0,done=0;
+  data.forEach(function(ex,i){var p=getProgress(dc,dk,i,ex.sets);total+=p.total;done+=p.done;});
+  var pre=dc.replace("day","d");
+  var te=document.getElementById(pre+"-total");var de=document.getElementById(pre+"-done");
+  if(te)te.textContent=total;if(de)de.textContent=done;
+}
+
+function toggleCard(id){document.getElementById(id).classList.toggle("open");}
+
+function getWorkoutsOnDate(dk){
+  var result=[];
+  ["day1","day2","day3","day4"].forEach(function(dc){
+    var data=DAY_DATA[dc];var has=false;
+    data.forEach(function(ex,i){for(var s=0;s<ex.sets;s++){if(lf(skey(dc,dk,i,s,"done"))==="1")has=true;}});
+    if(has){var c=DAY_COLORS[dc];result.push({dc:dc,label:c.label,bg:c.bg,color:c.color});}
+  });
+  return result;
+}
+
+function buildHistoryCalendar(){
+  var y=historyMonth.year,m=historyMonth.month;
+  var MONTHS=["January","February","March","April","May","June","July","August","September","October","November","December"];
+  document.getElementById("history-month-title").textContent=MONTHS[m]+" "+y;
+  var HDRS=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+  document.getElementById("cal-headers").innerHTML=HDRS.map(function(h){return'<div class="cal-header">'+h+'</div>';}).join("");
+  var firstDay=new Date(y,m,1).getDay();var dim=new Date(y,m+1,0).getDate();var tk=todayKey();
+  var cells="";
+  for(var i=0;i<firstDay;i++)cells+='<div class="cal-day empty"></div>';
+  for(var d=1;d<=dim;d++){
+    var dk=y+"-"+pad(m+1)+"-"+pad(d);
+    var wo=getWorkoutsOnDate(dk);var isT=dk===tk;var hasW=wo.length>0;
+    var dots=wo.map(function(w){return'<div class="cal-workout-dot" style="background:'+w.bg+';color:'+w.color+';">'+w.label+'</div>';}).join("");
+    cells+='<div class="cal-day'+(hasW?" has-workout":"")+(isT?" today":"")+'" '+(hasW?'onclick="showHistoryDetail(\''+dk+'\')"':'')+' ><div class="cal-day-num">'+d+'</div>'+dots+'</div>';
   }
-  updateDayProgress(dayCode);
-  updateCardProgress(id);
+  document.getElementById("cal-grid").innerHTML=cells;
+  document.getElementById("history-detail").innerHTML="";
 }
 
-function updateCardProgress(setId) {
-  const parts = setId.split('-');
-  const cardId = parts.slice(0, parts.length-1).join('-').replace(/-s\d+$/,'');
-  const prefix = cardId.replace(/-card$/,'') + '-card';
-  let total = 0, done = 0;
-  document.querySelectorAll(`[id^="${prefix}-s"]`).forEach(el => {
-    total++;
-    if (setStatus[el.id]) done++;
-  });
-  if (total === 0) return;
-  const pct = Math.round((done/total)*100);
-  const bar = document.getElementById(prefix + '-bar');
-  const pctEl = document.getElementById(prefix + '-pct');
-  if (bar) bar.style.width = pct + '%';
-  if (pctEl) pctEl.textContent = pct + '%';
-}
-
-function updateDayProgress(dayCode) {
-  let total = 0, done = 0;
-  document.querySelectorAll(`[id^="${dayCode}-card-"][id$="-card"]`).forEach(card => {
-    const cardBase = card.id.replace('-card','');
-    document.querySelectorAll(`[id^="${cardBase}-s"]`).forEach(el => {
-      total++;
-      if (setStatus[el.id]) done++;
+function showHistoryDetail(dk){
+  var wo=getWorkoutsOnDate(dk);if(!wo.length)return;
+  var html='<div><div class="section-title" style="font-size:16px;margin-bottom:10px;">Workout on '+formatDate(dk)+'</div>';
+  wo.forEach(function(w){
+    var data=DAY_DATA[w.dc];
+    html+='<div class="history-entry"><div class="history-entry-header"><span class="history-date-label">'+w.label+'</span><span class="history-day-badge" style="background:'+w.bg+';color:'+w.color+';">Day '+w.dc.replace("day","")+'</span></div><div class="history-sets">';
+    data.forEach(function(ex,i){
+      for(var s=0;s<ex.sets;s++){
+        var done=lf(skey(w.dc,dk,i,s,"done"))==="1";
+        var weight=lf(skey(w.dc,dk,i,s,"weight"),"");
+        var reps=lf(skey(w.dc,dk,i,s,"reps"),"");
+        if(done||weight||reps){
+          html+='<div class="history-set-row"><div class="history-set-done" style="background:'+(done?"var(--green-light)":"#E8E6E0")+';color:'+(done?"#fff":"var(--gray-muted)")+';">'+(done?"&#10003;":"")+'</div><span style="flex:1;font-weight:500;color:var(--gray-text);">'+ex.name+'</span><span style="font-size:11px;color:var(--gray-muted);">Set '+(s+1)+'</span><span style="font-size:12px;font-weight:600;">'+(weight?weight+"lb":"--")+'</span><span style="font-size:11px;color:var(--gray-muted);">x</span><span style="font-size:12px;font-weight:600;">'+(reps?reps+" reps":"--")+'</span></div>';
+        }
+      }
     });
+    html+='</div></div>';
   });
-  const el = document.getElementById(`${dayCode}-done`);
-  if (el) el.textContent = done;
+  html+='</div>';
+  document.getElementById("history-detail").innerHTML=html;
+  document.getElementById("history-detail").scrollIntoView({behavior:"smooth",block:"start"});
 }
 
-function buildGolfCircuit() {
-  const c = document.getElementById('golf-circuit');
-  if (!c) return;
-  let html = '';
-  golfCircuit.forEach(g => {
-    html += `
-      <div style="margin-bottom:10px; padding-bottom:10px; border-bottom:1px solid var(--green-mid);">
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:3px;">
-          <span style="font-weight:600; font-size:14px; color:var(--text-dark);">${g.name}</span>
-          <span style="font-size:12px; background:var(--green); color:#fff; padding:2px 8px; border-radius:20px;">${g.reps}</span>
-        </div>
-        <div style="font-size:12px; color:var(--gray-muted); line-height:1.5;">${g.desc}</div>
-      </div>`;
-  });
-  c.innerHTML = html;
+function changeHistoryMonth(dir){
+  historyMonth.month+=dir;
+  if(historyMonth.month>11){historyMonth.month=0;historyMonth.year++;}
+  if(historyMonth.month<0){historyMonth.month=11;historyMonth.year--;}
+  buildHistoryCalendar();
 }
 
-function buildProgress() {
-  const c = document.getElementById('progress-lifts');
-  if (!c) return;
-  let html = '';
-  progressLifts.forEach(lift => {
-    const saved = localStorage.getItem('lift_'+lift.name) || '';
-    html += `
-      <div class="lift-row">
-        <div>
-          <div class="lift-name">${lift.name}</div>
-          <div class="lift-details">${lift.notes} · Start: ${lift.start}</div>
-        </div>
-        <div class="lift-controls">
-          <input type="number" class="lift-weight-input" id="lift-${lift.name.replace(/ /g,'_')}" placeholder="${lift.start.split('–')[0]}" value="${saved}">
-          <span style="font-size:12px; color:var(--gray-muted);">lbs</span>
-          <button class="save-btn" onclick="saveLift('${lift.name}')">Save</button>
-        </div>
-      </div>`;
-  });
-  c.innerHTML = html;
-
-  const dt = document.getElementById('deadlift-table');
-  if (dt) {
-    let rows = '';
-    deadliftPlan.forEach((row, i) => {
-      const bg = i % 2 === 0 ? '#fff' : '#FAFAF8';
-      rows += `<tr style="background:${bg};">
-        <td style="padding:8px 12px; color:var(--gray-muted);">Wk ${row.week}</td>
-        <td style="padding:8px 12px; font-weight:600;">${row.weight}</td>
-        <td style="padding:8px 12px; color:var(--gray-text);">${row.sets}</td>
-      </tr>`;
-    });
-    dt.innerHTML = rows;
-  }
+function showPage(id){
+  document.querySelectorAll(".page").forEach(function(p){p.classList.remove("active");});
+  document.querySelectorAll(".nav-btn").forEach(function(b){b.classList.remove("active");});
+  document.getElementById("page-"+id).classList.add("active");
+  var pages=["schedule","day1","day2","day3","day4","golf","progress","history"];
+  var idx=pages.indexOf(id);if(idx>=0)document.querySelectorAll(".nav-btn")[idx].classList.add("active");
+  if(id==="history")buildHistoryCalendar();
 }
 
-function saveLift(name) {
-  const el = document.getElementById('lift-'+name.replace(/ /g,'_'));
-  if (el) {
-    localStorage.setItem('lift_'+name, el.value);
-    const btn = el.nextElementSibling.nextElementSibling;
-    btn.textContent = 'Saved!';
-    btn.style.background = 'var(--teal)';
-    setTimeout(() => { btn.textContent = 'Save'; btn.style.background = 'var(--green)'; }, 1500);
-  }
+function buildGolfCircuit(){
+  var c=document.getElementById("golf-circuit");if(!c)return;
+  c.innerHTML=GOLF_CIRCUIT.map(function(g){return'<div style="margin-bottom:9px;padding-bottom:9px;border-bottom:1px solid var(--green-mid);"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2px;"><span style="font-weight:600;font-size:13px;color:var(--text-dark);">'+g.name+'</span><span style="font-size:11px;background:var(--green);color:#fff;padding:2px 7px;border-radius:20px;">'+g.reps+'</span></div><div style="font-size:11px;color:var(--gray-muted);line-height:1.5;">'+g.desc+'</div></div>';}).join("");
 }
 
-function showPage(id) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById('page-'+id).classList.add('active');
-  const btns = document.querySelectorAll('.nav-btn');
-  const pages = ['schedule','day1','day2','day3','day4','golf','progress'];
-  const idx = pages.indexOf(id);
-  if (idx >= 0) btns[idx].classList.add('active');
+function buildProgress(){
+  var c=document.getElementById("progress-lifts");if(!c)return;
+  c.innerHTML=PROGRESS_LIFTS.map(function(lift){
+    var saved=lf("lift_"+lift.name.replace(/ /g,"_"),"");
+    return'<div class="lift-row"><div><div class="lift-name">'+lift.name+'</div><div class="lift-details">'+lift.notes+' &middot; Start: '+lift.start+'</div></div><div class="lift-controls"><input type="number" class="lift-weight-input" id="lift-'+lift.name.replace(/ /g,"_")+'" placeholder="'+lift.start.split("-")[0]+'" value="'+saved+'"><span style="font-size:11px;color:var(--gray-muted);">lbs</span><button class="save-btn" onclick="saveLift(\''+lift.name+'\')">Save</button></div></div>';
+  }).join("");
+  var dt=document.getElementById("deadlift-table");
+  if(dt)dt.innerHTML=DEADLIFT_PLAN.map(function(row,i){return'<tr style="background:'+(i%2===0?"#fff":"#FAFAF8")+'"><td style="padding:7px 11px;color:var(--gray-muted);">Wk '+row.week+'</td><td style="padding:7px 11px;font-weight:600;">'+row.weight+'</td><td style="padding:7px 11px;color:var(--gray-text);">'+row.sets+'</td></tr>';}).join("");
+  var bw=lf("body_weight","");var bwEl=document.getElementById("body-weight");if(bwEl&&bw)bwEl.value=bw;
 }
 
-function setDate() {
-  const d = new Date();
-  const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  const el = document.getElementById('today-date');
-  if (el) el.innerHTML = `${days[d.getDay()]}<br>${months[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()}`;
+function saveLift(name){
+  var el=document.getElementById("lift-"+name.replace(/ /g,"_"));if(!el)return;
+  sf("lift_"+name.replace(/ /g,"_"),el.value);
+  var btn=el.nextElementSibling.nextElementSibling;btn.textContent="Saved!";btn.style.background="var(--teal)";
+  setTimeout(function(){btn.textContent="Save";btn.style.background="var(--green)";},1500);
+}
+
+function saveBodyWeight(){
+  var el=document.getElementById("body-weight");if(el)sf("body_weight",el.value);
+}
+
+function setHeaderDate(){
+  var d=new Date();
+  var DAYS=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+  var MONS=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  var el=document.getElementById("today-date");
+  if(el)el.innerHTML=DAYS[d.getDay()]+", "+MONS[d.getMonth()]+" "+d.getDate();
 }
 
 // Init
-setDate();
-buildExercises(day1Data, 'day1-exercises', 'd1');
-buildExercises(day2Data, 'day2-exercises', 'd2');
-buildExercises(day3Data, 'day3-exercises', 'd3');
-buildExercises(day4Data, 'day4-exercises', 'd4');
+setHeaderDate();
+["day1","day2","day3","day4"].forEach(function(dc){buildDateBar(dc);buildExercises(dc,dc+"-exercises");});
 buildGolfCircuit();
 buildProgress();
 </script>
